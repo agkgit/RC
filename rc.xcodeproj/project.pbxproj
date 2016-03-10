@@ -12,6 +12,8 @@
 		AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3C1C92142700E3D08B /* Main.storyboard */; };
 		AE832A401C92142700E3D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3F1C92142700E3D08B /* Assets.xcassets */; };
 		AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A411C92142700E3D08B /* LaunchScreen.storyboard */; };
+		AE832A4B1C92161D00E3D08B /* RedConnectCallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */; };
+		AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AE832A3F1C92142700E3D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE832A421C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE832A441C92142700E3D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedConnectCallInfo.swift; sourceTree = "<group>"; };
+		AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
 				AE832A3A1C92142700E3D08B /* ViewController.swift */,
 				AE832A3C1C92142700E3D08B /* Main.storyboard */,
+				AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */,
+				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
 				AE832A3F1C92142700E3D08B /* Assets.xcassets */,
 				AE832A411C92142700E3D08B /* LaunchScreen.storyboard */,
 				AE832A441C92142700E3D08B /* Info.plist */,
@@ -137,7 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE832A3B1C92142700E3D08B /* ViewController.swift in Sources */,
+				AE832A4B1C92161D00E3D08B /* RedConnectCallInfo.swift in Sources */,
 				AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */,
+				AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
