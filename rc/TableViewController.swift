@@ -26,7 +26,7 @@ class TableViewController: UITableViewController {
                 
                 if let time = json[i]["value"][j]["time"].string {
                     call.time = time
-                    print(call.time + "\n")
+                    calls.append(call)
                 }
             }
         }
@@ -43,23 +43,25 @@ class TableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return calls.count
     }
 
-    /*
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        let cellID = "Cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
+        
+        cell.textLabel?.text = calls[indexPath.row].time
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
