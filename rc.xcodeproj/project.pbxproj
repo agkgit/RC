@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F0BD21C92229400961296 /* TableViewController.swift */; };
 		AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A381C92142700E3D08B /* AppDelegate.swift */; };
-		AE832A3B1C92142700E3D08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A3A1C92142700E3D08B /* ViewController.swift */; };
 		AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3C1C92142700E3D08B /* Main.storyboard */; };
 		AE832A401C92142700E3D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3F1C92142700E3D08B /* Assets.xcassets */; };
 		AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A411C92142700E3D08B /* LaunchScreen.storyboard */; };
-		AE832A4B1C92161D00E3D08B /* RedConnectCallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */; };
 		AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */; };
+		AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */; };
+		AE832A531C921CD700E3D08B /* calls.json in Resources */ = {isa = PBXBuildFile; fileRef = AE832A521C921CD700E3D08B /* calls.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE5F0BD21C92229400961296 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AE832A351C92142700E3D08B /* rc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE832A381C92142700E3D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE832A3A1C92142700E3D08B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE832A3D1C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE832A3F1C92142700E3D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE832A421C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE832A441C92142700E3D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedConnectCallInfo.swift; sourceTree = "<group>"; };
 		AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedConnectCallInfo.swift; path = ../RedConnectCallInfo.swift; sourceTree = "<group>"; };
+		AE832A521C921CD700E3D08B /* calls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calls.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 		AE832A371C92142700E3D08B /* rc */ = {
 			isa = PBXGroup;
 			children = (
+				AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */,
+				AE5F0BD21C92229400961296 /* TableViewController.swift */,
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
-				AE832A3A1C92142700E3D08B /* ViewController.swift */,
 				AE832A3C1C92142700E3D08B /* Main.storyboard */,
-				AE832A4A1C92161D00E3D08B /* RedConnectCallInfo.swift */,
 				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
+				AE832A521C921CD700E3D08B /* calls.json */,
 				AE832A3F1C92142700E3D08B /* Assets.xcassets */,
 				AE832A411C92142700E3D08B /* LaunchScreen.storyboard */,
 				AE832A441C92142700E3D08B /* Info.plist */,
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */,
+				AE832A531C921CD700E3D08B /* calls.json in Resources */,
 				AE832A401C92142700E3D08B /* Assets.xcassets in Resources */,
 				AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */,
 			);
@@ -142,10 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE832A3B1C92142700E3D08B /* ViewController.swift in Sources */,
-				AE832A4B1C92161D00E3D08B /* RedConnectCallInfo.swift in Sources */,
+				AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */,
 				AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */,
 				AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */,
+				AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +299,7 @@
 				AE832A491C92142700E3D08B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
