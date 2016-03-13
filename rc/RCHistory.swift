@@ -31,6 +31,15 @@ class RCHistory: NSObject {
                     call.clientPhone = clientPhone
                 }
                 
+                if let city = json[i]["value"][j]["city"].string {
+                    call.city = city
+                }
+                
+                if let liked = json[i]["value"][j]["liked"].string {
+                    if liked == "true" { call.liked = true }
+                    else if liked == "false" { call.liked = false }
+                }
+                
                 callsHistoryArray.append(call)
             }
         }

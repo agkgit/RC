@@ -38,10 +38,15 @@ class TableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         cell.time?.text = calls[indexPath.row].time
-        cell.visitorPhone?.text = calls[indexPath.row].visitorPhone
-        cell.clientPhone?.text = calls[indexPath.row].clientPhone
+        cell.visitorPhone?.text = phoneNumberFormat(calls[indexPath.row].visitorPhone)
+        cell.clientPhone?.text = phoneNumberFormat(calls[indexPath.row].clientPhone)
         cell.arrow?.text = "\u{2192}"
         cell.statusImage?.image = UIImage(named: "status_normal.png")
+        cell.flagImage?.image = UIImage(named: "Russia.png")
+        cell.cityLabel?.text = calls[indexPath.row].city
+        
+        if calls[indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
+        else if calls[indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
         
         return cell
     }
@@ -91,5 +96,20 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func phoneNumberFormat (number: String) -> String {
+        
+        var phone: String = "+"
+        var i = 0
+        let space: Character = " "
+        
+        for char in number.characters {
+            phone.append(char)
+            if (i == 0) || (i == 3) || (i == 6) || (i == 8) { phone.append(space) }
+            i += 1
+        }
+        
+        return phone
+    }
 
 }

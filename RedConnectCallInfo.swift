@@ -20,6 +20,7 @@ class RedConnectCallInfo: NSObject {
     var browser: String
     var status: String
     var duration: String
+    var liked: Bool
     
     override init () {
         
@@ -33,6 +34,7 @@ class RedConnectCallInfo: NSObject {
         self.browser  = ""
         self.status  = ""
         self.duration  = ""
+        self.liked = false
         
         super.init()
         

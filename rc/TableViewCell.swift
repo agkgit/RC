@@ -16,8 +16,12 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var clientPhone: UILabel!
     @IBOutlet weak var arrow: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var likedImage: UIImageView!
     
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
