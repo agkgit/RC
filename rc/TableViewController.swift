@@ -10,28 +10,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    var calls = [RedConnectCallInfo]()
+    var calls = RCHistory.getHistory()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
-        let data = NSData(contentsOfFile: file) as NSData!
-        let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
-        
-        for i in 1 ..< json.count {
-            for j in 1 ..< json[i].count {
-                let call = RedConnectCallInfo()
-                
-                if let time = json[i]["value"][j]["time"].string {
-                    call.time = time
-                    calls.append(call)
-                }
-            }
-        }
-    
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,10 +36,12 @@ class TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cellID = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
-        
-        cell.textLabel?.text = calls[indexPath.row].time
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+        cell.time?.text = calls[indexPath.row].time
+        cell.visitorPhone?.text = calls[indexPath.row].visitorPhone
+        cell.clientPhone?.text = calls[indexPath.row].clientPhone
+        cell.arrow?.text = "\u{2192}"
+        cell.statusImage?.image = UIImage(named: "status_normal.png")
         
         return cell
     }

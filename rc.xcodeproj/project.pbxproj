@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F0BD21C92229400961296 /* TableViewController.swift */; };
+		AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE82AC871C944608006D1D7B /* RCHistory.swift */; };
 		AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A381C92142700E3D08B /* AppDelegate.swift */; };
 		AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3C1C92142700E3D08B /* Main.storyboard */; };
 		AE832A401C92142700E3D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3F1C92142700E3D08B /* Assets.xcassets */; };
@@ -15,10 +16,13 @@
 		AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */; };
 		AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */; };
 		AE832A531C921CD700E3D08B /* calls.json in Resources */ = {isa = PBXBuildFile; fileRef = AE832A521C921CD700E3D08B /* calls.json */; };
+		AEA5B57D1C94DBE8009306AC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */; };
+		AEA5B57F1C94E715009306AC /* status_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA5B57E1C94E715009306AC /* status_normal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE5F0BD21C92229400961296 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AE82AC871C944608006D1D7B /* RCHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCHistory.swift; sourceTree = "<group>"; };
 		AE832A351C92142700E3D08B /* rc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE832A381C92142700E3D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE832A3D1C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedConnectCallInfo.swift; path = ../RedConnectCallInfo.swift; sourceTree = "<group>"; };
 		AE832A521C921CD700E3D08B /* calls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calls.json; sourceTree = "<group>"; };
+		AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		AEA5B57E1C94E715009306AC /* status_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_normal.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +66,18 @@
 		AE832A371C92142700E3D08B /* rc */ = {
 			isa = PBXGroup;
 			children = (
+				AEA5B57E1C94E715009306AC /* status_normal.png */,
+				AE832A521C921CD700E3D08B /* calls.json */,
+				AE82AC871C944608006D1D7B /* RCHistory.swift */,
 				AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */,
 				AE5F0BD21C92229400961296 /* TableViewController.swift */,
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
-				AE832A3C1C92142700E3D08B /* Main.storyboard */,
 				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
-				AE832A521C921CD700E3D08B /* calls.json */,
+				AE832A3C1C92142700E3D08B /* Main.storyboard */,
 				AE832A3F1C92142700E3D08B /* Assets.xcassets */,
 				AE832A411C92142700E3D08B /* LaunchScreen.storyboard */,
 				AE832A441C92142700E3D08B /* Info.plist */,
+				AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */,
 			);
 			path = rc;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA5B57F1C94E715009306AC /* status_normal.png in Resources */,
 				AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */,
 				AE832A531C921CD700E3D08B /* calls.json in Resources */,
 				AE832A401C92142700E3D08B /* Assets.xcassets in Resources */,
@@ -148,6 +158,8 @@
 			files = (
 				AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */,
 				AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */,
+				AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */,
+				AEA5B57D1C94DBE8009306AC /* TableViewCell.swift in Sources */,
 				AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */,
 				AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */,
 			);
