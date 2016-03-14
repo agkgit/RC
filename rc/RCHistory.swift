@@ -40,6 +40,11 @@ class RCHistory: NSObject {
                     else if liked == "false" { call.liked = false }
                 }
                 
+                if let free = json[i]["value"][j]["free"].bool {
+                    if free { call.free = true }
+                    else if !free { call.free = false }
+                }
+                
                 callsHistoryArray.append(call)
             }
         }

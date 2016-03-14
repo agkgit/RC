@@ -48,6 +48,10 @@ class TableViewController: UITableViewController {
         if calls[indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
         else if calls[indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
         
+        if calls[indexPath.row].free == true { cell.freeImage?.image = UIImage(named: "rc_free.png") }
+        else if calls[indexPath.row].free == false { cell.freeImage?.image = UIImage(named: "rc_business.png") }
+        
+        
         return cell
     }
 
