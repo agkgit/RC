@@ -10,31 +10,69 @@ import UIKit
 
 class RedConnectCallInfo: NSObject {
     
+    var id: Int
+    var data: String
     var time: String
+    var status: String
+    var vid: Int
     var clientPhone: String
     var visitorPhone: String
     var free: Bool
-    var visits: String
     var country: String
+    var countryRu: String
     var city: String
-    var browser: String
-    var status: String
+    var cityRu: String
     var duration: String
-    var liked: Bool
+    var liked: Bool             //?
+
+    var widgetId: Int
+    var browser: String
+    var visits: Int
+    var feedbackComment: String
+    var page: String
+    var ip: String
+    var timeOnSite: String
+    var viewedPages: Int
+    var comment: String
+    var hasFileName: Bool
     
+    //var reached: Bool
+    //var referrer: String
+
+
+
+
+
+
     override init () {
         
+        self.id = 0
+        self.data = ""
         self.time = ""
+        self.status = ""
+        self.vid = 0                  //?
+        self.free = false
         self.clientPhone = ""
         self.visitorPhone = ""
-        self.free  = true
-        self.visits  = ""
-        self.country  = ""
-        self.city  = ""
-        self.browser  = ""
-        self.status  = ""
-        self.duration  = ""
-        self.liked = false
+        self.country = ""
+        self.countryRu = ""
+        self.city = ""
+        self.cityRu = ""
+        self.duration = ""
+        self.liked = false            //?
+        
+        
+        self.widgetId = 0
+        self.browser = ""
+        self.visits = 1
+        self.feedbackComment = ""       //?
+        self.page = ""
+        self.ip = ""
+        self.timeOnSite = ""
+        self.viewedPages = 0
+        self.comment = ""
+        self.hasFileName = false
+
         
         super.init()
         
@@ -43,18 +81,7 @@ class RedConnectCallInfo: NSObject {
     
     
     //    init ( time: String, clientPhone: String, visitorPhone: String, free: Bool, visits: String,country: String, city: String, browser: String, status: String, duration: String ) {
-    //
-    //        self.time = time
-    //        self.clientPhone = clientPhone
-    //        self.visitorPhone = visitorPhone
-    //        self.free = free
-    //        self.visits = visits
-    //        self.country = country
-    //        self.city = city
-    //        self.browser = browser
-    //        self.visitor_unavailable = visitor_unavailable
-    //        self.duration = duration
-    //
+
     //    }
 
 }

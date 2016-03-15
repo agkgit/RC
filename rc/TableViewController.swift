@@ -10,9 +10,13 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    var calls = RCHistory.getHistory()
+    var calls = RCHistory.getHistory()   // let
+    var sectors = RCHistory.getSectors() // let
     
     override func viewDidLoad() {
+        
+        for call in calls { print("\(call.data) + \(call.id)\n") }
+        
         super.viewDidLoad()
     }
 
@@ -22,15 +26,24 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return RCHistory.getSectors()[section]
+        
+    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return RCHistory.getSectors().count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return calls.count
+
+        var number = 0
+        for call in calls { if call.data == sectors[section] { number += 1 } }
+        
+        return number
     }
 
 
@@ -54,7 +67,6 @@ class TableViewController: UITableViewController {
         
         return cell
     }
-
 
     /*
     // Override to support conditional editing of the table view.
