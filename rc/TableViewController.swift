@@ -74,19 +74,19 @@ class TableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.time?.text = calls[indexPath.row].time
-        cell.visitorPhone?.text = phoneNumberFormat(calls[indexPath.row].visitorPhone)
-        cell.clientPhone?.text = phoneNumberFormat(calls[indexPath.row].clientPhone)
+        cell.time?.text = callsDay[indexPath.section][indexPath.row].time
+        cell.visitorPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].visitorPhone)
+        cell.clientPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].clientPhone)
         cell.arrow?.text = "\u{2192}"
         cell.statusImage?.image = UIImage(named: "status_normal.png")
         cell.flagImage?.image = UIImage(named: "Russia.png")
-        cell.cityLabel?.text = calls[indexPath.row].city
+        cell.cityLabel?.text = callsDay[indexPath.section][indexPath.row].city
         
-        if calls[indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
-        else if calls[indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
+        if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
+        else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
         
-        if calls[indexPath.row].free == true { cell.freeImage?.image = UIImage(named: "rc_free.png") }
-        else if calls[indexPath.row].free == false { cell.freeImage?.image = UIImage(named: "rc_business.png") }
+        if callsDay[indexPath.section][indexPath.row].free == true { cell.freeImage?.image = UIImage(named: "rc_free.png") }
+        else if callsDay[indexPath.section][indexPath.row].free == false { cell.freeImage?.image = UIImage(named: "rc_business.png") }
         
         
         return cell
