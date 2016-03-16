@@ -12,10 +12,20 @@ class TableViewController: UITableViewController {
 
     var calls = RCHistory.getHistory()   // let
     var sectors = RCHistory.getSectors() // let
+    var callsDay = [[RedConnectCallInfo]]()
+
     
     override func viewDidLoad() {
         
-        for call in calls { print("\(call.data) + \(call.id)\n") }
+        for i in 0 ..< sectors.count {
+            let m = [RedConnectCallInfo]()
+            callsDay.append(m)
+            for j in 0 ..< calls.count {
+                if calls[j].data == sectors[i] {
+                    callsDay[i].append(calls[j])
+                }
+            }
+        }
         
         super.viewDidLoad()
     }
@@ -47,9 +57,23 @@ class TableViewController: UITableViewController {
     }
 
 
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let label = UILabel()
+//        
+//        label.frame = CGRect(x: 20, y: 8, width: 320, height: 5)
+//        label.font = UIFont.boldSystemFontOfSize(19)
+//        let headView = UIView()
+//        headView.addSubview(label)
+//        
+//        return headView
+//    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+        
         cell.time?.text = calls[indexPath.row].time
         cell.visitorPhone?.text = phoneNumberFormat(calls[indexPath.row].visitorPhone)
         cell.clientPhone?.text = phoneNumberFormat(calls[indexPath.row].clientPhone)

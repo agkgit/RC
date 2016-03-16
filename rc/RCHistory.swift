@@ -34,8 +34,12 @@ class RCHistory: NSObject {
         let data = NSData(contentsOfFile: file) as NSData!
         let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
         
+        print("json.count = \(json.count)")
+        
         for i in 0 ..< json.count {
-            for j in 0 ..< json[i].count {
+            
+            
+            for j in 0 ..< json[i]["value"].count {
                 let call = RedConnectCallInfo()
                 
                 if let id = json[i]["value"][j]["id"].int { call.id = id }
