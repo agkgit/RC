@@ -17,6 +17,12 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
+        
+//        var headerView = UIView(frame: CGRectMake(0, 0, 20, 20))
+//        self.tableView.tableHeaderView = headerView
+        
+        
+        
         for i in 0 ..< sectors.count {
             let m = [RedConnectCallInfo]()
             callsDay.append(m)
@@ -57,17 +63,19 @@ class TableViewController: UITableViewController {
     }
 
 
-//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        
-//        let label = UILabel()
-//        
-//        label.frame = CGRect(x: 20, y: 8, width: 320, height: 5)
-//        label.font = UIFont.boldSystemFontOfSize(19)
-//        let headView = UIView()
-//        headView.addSubview(label)
-//        
-//        return headView
-//    }
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel()
+        
+        label.frame = CGRect(x: 8, y: 0, width: 320, height: 40)
+        label.font = UIFont.boldSystemFontOfSize(12)
+        
+        label.text = sectors[section]
+        let headView = UIView()
+        headView.addSubview(label)
+        
+        return headView
+    }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
