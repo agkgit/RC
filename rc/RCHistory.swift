@@ -68,7 +68,7 @@ class RCHistory: NSObject {
 
                 if let city = json[i]["value"][j]["city"].string { call.city = city }
                 
-                if let cityRu = json[i]["value"][j]["cityRU"].string { call.cityRu = cityRu }
+                if let cityRu = json[i]["value"][j]["cityRu"].string { call.cityRu = cityRu }
                 
                 if let duration = json[i]["value"][j]["duration"].string { call.duration = duration }
 
