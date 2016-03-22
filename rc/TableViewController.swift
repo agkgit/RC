@@ -82,13 +82,16 @@ class TableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
+        cell.playButton.setImage(UIImage(named: "play40.png"), forState: UIControlState.Normal)
+        cell.playButton.setImage(UIImage(named: "pause40.png"), forState: UIControlState.Highlighted)
+        
         cell.time?.text = callsDay[indexPath.section][indexPath.row].time
         cell.visitorPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].visitorPhone)
         cell.clientPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].clientPhone)
         cell.arrow?.text = "\u{2192}"
         cell.statusImage?.image = UIImage(named: "status_normal.png")
         cell.flagImage?.image = UIImage(named: "Russia.png")
-        cell.cityLabel?.text = callsDay[indexPath.section][indexPath.row].city
+        cell.cityLabel?.text = callsDay[indexPath.section][indexPath.row].cityRu
         
         if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
         else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
@@ -108,17 +111,17 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//        if editingStyle == .Delete {
+//            // Delete the row from the data source
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        } else if editingStyle == .Insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

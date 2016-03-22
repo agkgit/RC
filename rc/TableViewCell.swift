@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class TableViewCell: UITableViewCell {
     
@@ -20,11 +22,13 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var likedImage: UIImageView!
     @IBOutlet weak var freeImage: UIImageView!
+    @IBOutlet weak var playButton: UIButton!
+    var player = AVAudioPlayer()
+
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -32,5 +36,19 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func playButtonAction(sender: AnyObject) {
+
+                let url:NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
+                do { player = try AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil) }
+                catch let error as NSError { print(error.description) }
+                player.numberOfLoops = 1
+                player.prepareToPlay()
+                player.play()
+    }
+    
+
+    
+    
 
 }

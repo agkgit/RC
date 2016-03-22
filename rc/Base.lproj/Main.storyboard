@@ -9,7 +9,7 @@
         <scene sceneID="W1y-4S-xer">
             <objects>
                 <tableViewController id="wqk-LR-ZZz" customClass="TableViewController" customModule="rc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="B21-9h-ZSp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="12" id="B21-9h-ZSp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,9 +51,6 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-QJ-6lK">
-                                            <rect key="frame" x="8" y="7" width="20" height="20"/>
-                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvC-9K-tv7">
                                             <rect key="frame" x="135" y="22" width="10" height="10"/>
                                         </imageView>
@@ -63,6 +60,15 @@
                                             <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvX-Pr-Txj">
+                                            <rect key="frame" x="8" y="9" width="20" height="20"/>
+                                            <connections>
+                                                <action selector="playButtonAction:" destination="CGV-zI-Q1C" eventType="touchUpInside" id="8Sf-FJ-L4H"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-QJ-6lK">
+                                            <rect key="frame" x="300" y="9" width="20" height="20"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -72,6 +78,7 @@
                                     <outlet property="flagImage" destination="Yyb-Tu-b0l" id="gXN-V8-2Uv"/>
                                     <outlet property="freeImage" destination="hJT-QJ-6lK" id="hsh-1p-Th7"/>
                                     <outlet property="likedImage" destination="pEE-tq-l8I" id="bZP-o2-yUy"/>
+                                    <outlet property="playButton" destination="bvX-Pr-Txj" id="Xmn-oE-P7z"/>
                                     <outlet property="statusImage" destination="OvC-9K-tv7" id="GQK-1v-D0E"/>
                                     <outlet property="time" destination="fK1-CM-x6O" id="owU-yr-vui"/>
                                     <outlet property="visitorPhone" destination="bJW-kL-hu6" id="oOi-oJ-g3h"/>
@@ -83,11 +90,13 @@
                             <outlet property="delegate" destination="wqk-LR-ZZz" id="AwS-t1-xcf"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ev-eP-6Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-683" y="-2005"/>
+            <point key="canvasLocation" x="-724" y="-2097"/>
         </scene>
     </scenes>
 </document>
