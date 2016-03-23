@@ -9,7 +9,6 @@
 import UIKit
 
 class RCHistory: NSObject {
-
     
     static func getSectors() -> [String] {
         let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
@@ -26,9 +25,9 @@ class RCHistory: NSObject {
     }
     
     
-    static func getHistory() -> [RedConnectCallInfo] {
+    static func getHistory() -> [RedConnectCallData] {
         
-        var callsHistoryArray = [RedConnectCallInfo]()
+        var callsHistoryArray = [RedConnectCallData]()
         
         let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
         let data = NSData(contentsOfFile: file) as NSData!
@@ -40,7 +39,7 @@ class RCHistory: NSObject {
             
             
             for j in 0 ..< json[i]["value"].count {
-                let call = RedConnectCallInfo()
+                let call = RedConnectCallData()
                 
                 if let id = json[i]["value"][j]["id"].int { call.id = id }
                 
@@ -105,6 +104,83 @@ class RCHistory: NSObject {
         
         return callsHistoryArray
     }
+}
+
+class RedConnectCallData: NSObject {
     
+    var id: Int?
+    var data: String?
+    var time: String?
+    var status: String?
+    var vid: Int?
+    var clientPhone: String?
+    var visitorPhone: String?
+    var free: Bool?
+    var country: String?
+    var countryRu: String?
+    var city: String?
+    var cityRu: String?
+    var duration: String?
+    var liked: Bool?
+    
+    var widgetId: Int?
+    var browser: String?
+    var visits: Int?
+    var feedbackComment: String?
+    var page: String?
+    var ip: String?
+    var timeOnSite: String?
+    var viewedPages: Int?
+    var comment: String?
+    var hasFileName: Bool?
+    
+    var reached: Bool?
+    var referrer: String?
+    
+    
+    
+    
+    
+    
+    //    override init () {
+    //
+    //        self.id = 0
+    //        self.data = ""
+    //        self.time = ""
+    //        self.status = ""
+    //        self.vid = 0                  //?
+    //        self.free = false
+    //        self.clientPhone = ""
+    //        self.visitorPhone = ""
+    //        self.country = ""
+    //        self.countryRu = ""
+    //        self.city = ""
+    //        self.cityRu = ""
+    //        self.duration = ""
+    //        self.liked = false            //?
+    //
+    //
+    //        self.widgetId = 0
+    //        self.browser = ""
+    //        self.visits = 1
+    //        self.feedbackComment = ""       //?
+    //        self.page = ""
+    //        self.ip = ""
+    //        self.timeOnSite = ""
+    //        self.viewedPages = 0
+    //        self.comment = ""
+    //        self.hasFileName = false
+    //
+    //
+    //        super.init()
+    //
+    //    }
+    
+    
+    
+    //    init ( time: String, clientPhone: String, visitorPhone: String, free: Bool, visits: String,country: String, city: String, browser: String, status: String, duration: String ) {
+    
+    //    }
     
 }
+

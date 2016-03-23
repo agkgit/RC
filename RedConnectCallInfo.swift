@@ -4,40 +4,40 @@
 //
 //  Created by Arseniy Krupenin on 11.03.16.
 //  Copyright © 2016 RH. All rights reserved.
-//
+
 
 import UIKit
 
 class RedConnectCallInfo: NSObject {
     
-    var id: Int
-    var data: String
-    var time: String
-    var status: String
-    var vid: Int
-    var clientPhone: String
-    var visitorPhone: String
-    var free: Bool
-    var country: String
-    var countryRu: String
-    var city: String
-    var cityRu: String
-    var duration: String
-    var liked: Bool             //?
+    var id: Int?
+    var data: String?
+    var time: String?
+    var status: String?
+    var vid: Int?
+    var clientPhone: String?
+    var visitorPhone: String?
+    var free: Bool?
+    var country: String?
+    var countryRu: String?
+    var city: String?
+    var cityRu: String?
+    var duration: String?
+    var liked: Bool?
 
-    var widgetId: Int
-    var browser: String
-    var visits: Int
-    var feedbackComment: String
-    var page: String
-    var ip: String
-    var timeOnSite: String
-    var viewedPages: Int
-    var comment: String
-    var hasFileName: Bool
+    var widgetId: Int?
+    var browser: String?
+    var visits: Int?
+    var feedbackComment: String?
+    var page: String?
+    var ip: String?
+    var timeOnSite: String?
+    var viewedPages: Int?
+    var comment: String?
+    var hasFileName: Bool?
     
-    //var reached: Bool
-    //var referrer: String
+    var reached: Bool?
+    var referrer: String?
 
 
 
@@ -80,8 +80,8 @@ class RedConnectCallInfo: NSObject {
     
     
     
-    //    init ( time: String, clientPhone: String, visitorPhone: String, free: Bool, visits: String,country: String, city: String, browser: String, status: String, duration: String ) {
+        init ( time: String, clientPhone: String, visitorPhone: String, free: Bool, visits: String,country: String, city: String, browser: String, status: String, duration: String ) {
 
-    //    }
+        }
 
 }

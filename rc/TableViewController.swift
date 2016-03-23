@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
 
     var calls = RCHistory.getHistory()   // let
     var sectors = RCHistory.getSectors() // let
-    var callsDay = [[RedConnectCallInfo]]()
+    var callsDay = [[RedConnectCallData]]()
 
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class TableViewController: UITableViewController {
         
         
         for i in 0 ..< sectors.count {
-            let m = [RedConnectCallInfo]()
+            let m = [RedConnectCallData]()
             callsDay.append(m)
             for j in 0 ..< calls.count {
                 if calls[j].data == sectors[i] {
@@ -82,22 +82,35 @@ class TableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.playButton.setImage(UIImage(named: "play40.png"), forState: UIControlState.Normal)
-        cell.playButton.setImage(UIImage(named: "pause40.png"), forState: UIControlState.Highlighted)
+
         
         cell.time?.text = callsDay[indexPath.section][indexPath.row].time
-        cell.visitorPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].visitorPhone)
-        cell.clientPhone?.text = phoneNumberFormat(callsDay[indexPath.section][indexPath.row].clientPhone)
+        
+        if let visitorPhone = callsDay[indexPath.section][indexPath.row].visitorPhone {
+            cell.visitorPhone.text = phoneNumberFormat(visitorPhone)
+        }
+        
+        if  let clientPhone = callsDay[indexPath.section][indexPath.row].clientPhone {
+            cell.clientPhone.text = phoneNumberFormat(clientPhone)
+        }
+        
+        if let cityRu = callsDay[indexPath.section][indexPath.row].cityRu {
+            cell.cityLabel?.text = cityRu
+        }
+        
         cell.arrow?.text = "\u{2192}"
-        cell.statusImage?.image = UIImage(named: "status_normal.png")
-        cell.flagImage?.image = UIImage(named: "Russia.png")
-        cell.cityLabel?.text = callsDay[indexPath.section][indexPath.row].cityRu
         
         if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
         else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
         
         if callsDay[indexPath.section][indexPath.row].free == true { cell.freeImage?.image = UIImage(named: "rc_free.png") }
         else if callsDay[indexPath.section][indexPath.row].free == false { cell.freeImage?.image = UIImage(named: "rc_business.png") }
+        
+        cell.statusImage?.image = UIImage(named: "status_normal.png")
+        cell.flagImage?.image = UIImage(named: "Russia.png")
+        
+        cell.playButton.setImage(UIImage(named: "play40.png"), forState: UIControlState.Normal)
+        cell.playButton.setImage(UIImage(named: "pause40.png"), forState: UIControlState.Highlighted)
         
         
         return cell
@@ -112,15 +125,39 @@ class TableViewController: UITableViewController {
     */
 
     
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//    // Override to support editing the table view.
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .Delete {
+//            // Delete the row from the data source
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        } else if editingStyle == .Insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }    
+//    }
+    
+    
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        //Social
+        let infoAction = UITableViewRowAction(style: .Default, title: "ИНФО", handler: { (actin, indexPath) -> Void in
+            
+            print("Информация")
+            
+        })
+        
+        //Ban
+        let banAction = UITableViewRowAction(style: .Default, title: "БАН", handler: {(actin, indexPath) -> Void in
+            
+            print("Пользователь забанен")
+                        
+        })
+        
+        infoAction.backgroundColor = UIColor(red: 28.0/255.0, green: 165.0/255.0, blue: 253.0/255.0, alpha: 1.0)
+        banAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        
+        return [banAction, infoAction]
     }
+
     
 
     /*
