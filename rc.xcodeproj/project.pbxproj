@@ -10,6 +10,9 @@
 		AE0671EA1CA1E1CB00F926A5 /* pause40.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0671E81CA1E1CB00F926A5 /* pause40.png */; };
 		AE0671EB1CA1E1CB00F926A5 /* play40.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0671E91CA1E1CB00F926A5 /* play40.png */; };
 		AE0B53881CA0A73F00CA80C4 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE0B53871CA0A73E00CA80C4 /* sound.mp3 */; };
+		AE508A511CB30B6800FF2EDB /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A501CB30B6800FF2EDB /* history.png */; };
+		AE508A531CB30E1A00FF2EDB /* Oval7.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A521CB30E1A00FF2EDB /* Oval7.png */; };
+		AE508A551CB3117F00FF2EDB /* Oval3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A541CB3117F00FF2EDB /* Oval3.png */; };
 		AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F0BD21C92229400961296 /* TableViewController.swift */; };
 		AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE82AC871C944608006D1D7B /* RCHistory.swift */; };
 		AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A381C92142700E3D08B /* AppDelegate.swift */; };
@@ -32,6 +35,9 @@
 		AE0671E81CA1E1CB00F926A5 /* pause40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause40.png; sourceTree = "<group>"; };
 		AE0671E91CA1E1CB00F926A5 /* play40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play40.png; sourceTree = "<group>"; };
 		AE0B53871CA0A73E00CA80C4 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		AE508A501CB30B6800FF2EDB /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
+		AE508A521CB30E1A00FF2EDB /* Oval7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval7.png; sourceTree = "<group>"; };
+		AE508A541CB3117F00FF2EDB /* Oval3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval3.png; sourceTree = "<group>"; };
 		AE5F0BD21C92229400961296 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AE82AC871C944608006D1D7B /* RCHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCHistory.swift; sourceTree = "<group>"; };
 		AE832A351C92142700E3D08B /* rc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +107,9 @@
 		AEC568AE1C961791000FE247 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AE508A541CB3117F00FF2EDB /* Oval3.png */,
+				AE508A521CB30E1A00FF2EDB /* Oval7.png */,
+				AE508A501CB30B6800FF2EDB /* history.png */,
 				AE0B53871CA0A73E00CA80C4 /* sound.mp3 */,
 				AEC568AF1C961CDE000FE247 /* liked_false.png */,
 				AEC568B01C961CDE000FE247 /* liked_true.png */,
@@ -174,11 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE0671EA1CA1E1CB00F926A5 /* pause40.png in Resources */,
+				AE508A551CB3117F00FF2EDB /* Oval3.png in Resources */,
 				AE0B53881CA0A73F00CA80C4 /* sound.mp3 in Resources */,
 				AEA5B57F1C94E715009306AC /* status_normal.png in Resources */,
 				AEC568B21C961CDE000FE247 /* liked_true.png in Resources */,
 				AE9BE35F1C975BBD00EF75D1 /* rc_business.png in Resources */,
 				AEC568B11C961CDE000FE247 /* liked_false.png in Resources */,
+				AE508A511CB30B6800FF2EDB /* history.png in Resources */,
 				AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */,
 				AE9BE35E1C975BBD00EF75D1 /* rc_free.png in Resources */,
 				AEC568AD1C961789000FE247 /* Russia.png in Resources */,
@@ -186,6 +197,7 @@
 				AE832A531C921CD700E3D08B /* calls.json in Resources */,
 				AE832A401C92142700E3D08B /* Assets.xcassets in Resources */,
 				AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */,
+				AE508A531CB30E1A00FF2EDB /* Oval7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,11 +100,9 @@ class TableViewController: UITableViewController {
         
         cell.arrow?.text = "\u{2192}"
         
-        if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
-        else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
+//        if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
+//        else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
         
-        if callsDay[indexPath.section][indexPath.row].free == true { cell.freeImage?.image = UIImage(named: "rc_free.png") }
-        else if callsDay[indexPath.section][indexPath.row].free == false { cell.freeImage?.image = UIImage(named: "rc_business.png") }
         
         cell.statusImage?.image = UIImage(named: "status_normal.png")
         cell.flagImage?.image = UIImage(named: "Russia.png")
@@ -190,10 +188,16 @@ class TableViewController: UITableViewController {
         var phone: String = "+"
         var i = 0
         let space: Character = " "
+        let bktOpen: Character = "("
+        let bktClose: Character = ")"
+        let dash: Character = "-"
         
         for char in number.characters {
             phone.append(char)
-            if (i == 0) || (i == 3) || (i == 6) || (i == 8) { phone.append(space) }
+            if (i == 3) { phone.append(bktClose) }
+            if (i == 0) || (i == 3) { phone.append(space) }
+            if (i == 0) { phone.append(bktOpen) }
+            if (i == 6) || (i == 8) { phone.append(dash)}
             i += 1
         }
         

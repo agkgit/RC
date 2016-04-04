@@ -10,7 +10,7 @@ import UIKit
 
 class RedConnectCallInfo: NSObject {
     
-    var id: Int?
+    var id: Int!
     var data: String?
     var time: String?
     var status: String?

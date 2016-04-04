@@ -21,7 +21,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var flagImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var likedImage: UIImageView!
-    @IBOutlet weak var freeImage: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     var player = AVAudioPlayer()
 
