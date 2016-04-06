@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSw-Bs-pzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="-1258"/>
+            <point key="canvasLocation" x="-293" y="-1258"/>
         </scene>
         <!--History-->
         <scene sceneID="W1y-4S-xer">
@@ -119,7 +119,7 @@
         <scene sceneID="Ip4-QA-7co">
             <objects>
                 <navigationController title="История" automaticallyAdjustsScrollViewInsets="NO" id="2Uz-kr-Sd1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="История" image="Oval3.png" selectedImage="Oval7.png" id="5Md-wp-Xbj">
+                    <tabBarItem key="tabBarItem" title="История" image="icon_payment_hover" selectedImage="icon_payment_hover" id="5Md-wp-Xbj">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -143,6 +143,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQG-Pw-tDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-903" y="-2001"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0XW-b4-5SD">
+            <objects>
+                <viewController id="BeO-nf-SxO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="74G-vi-E7m"/>
+                        <viewControllerLayoutGuide type="bottom" id="dCe-Ws-v78"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5cQ-dH-U9o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-PL-CZx">
+                                <rect key="frame" x="71" y="181" width="178" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-fD-07o">
+                                <rect key="frame" x="71" y="219" width="178" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lag-up-Jjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1669" y="-2001"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aF9-xP-Tj3">
@@ -188,7 +219,7 @@
         <scene sceneID="rNI-xV-yvf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9YO-OE-VzZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Статистика" image="icon_promocode_active.png" selectedImage="icon_promocode_active.png" id="XB0-uE-eGm"/>
+                    <tabBarItem key="tabBarItem" title="Статистика" image="icon_view_active" selectedImage="icon_view_active" id="XB0-uE-eGm"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Sr-GT-acp">
@@ -203,13 +234,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdU-A1-YnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="-1258"/>
+            <point key="canvasLocation" x="-659" y="-1258"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="9hW-cf-JIs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hoI-hv-MMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Настройки" image="icon_setup_active.png" selectedImage="icon_setup_active.png" id="fyM-e0-j1c"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="icon_setup_active" selectedImage="icon_setup_active" id="fyM-e0-j1c"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ct-Ou-baK">
@@ -228,9 +259,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Oval3.png" width="24" height="24"/>
-        <image name="Oval7.png" width="24" height="24"/>
-        <image name="icon_promocode_active.png" width="24" height="24"/>
-        <image name="icon_setup_active.png" width="24" height="24"/>
+        <image name="icon_payment_hover" width="24" height="24"/>
+        <image name="icon_setup_active" width="24" height="24"/>
+        <image name="icon_view_active" width="24" height="24"/>
     </resources>
 </document>

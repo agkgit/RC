@@ -73,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE5521551CB5A60A0072A11E /* tab_bar_icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tab_bar_icons;
+			sourceTree = "<group>";
+		};
 		AE832A2C1C92142700E3D08B = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +99,7 @@
 		AE832A371C92142700E3D08B /* rc */ = {
 			isa = PBXGroup;
 			children = (
+				AE5521551CB5A60A0072A11E /* tab_bar_icons */,
 				AEC568AE1C961791000FE247 /* images */,
 				AE832A521C921CD700E3D08B /* calls.json */,
 				AE82AC871C944608006D1D7B /* RCHistory.swift */,
@@ -334,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = rc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RH.rc;
@@ -345,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = rc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RH.rc;
