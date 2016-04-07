@@ -137,50 +137,5 @@ class RedConnectCallData: NSObject {
     var reached: Bool!
     var referrer: String!
     
-    
-    
-    
-    
-    
-    //    override init () {
-    //
-    //        self.id = 0
-    //        self.data = ""
-    //        self.time = ""
-    //        self.status = ""
-    //        self.vid = 0                  //?
-    //        self.free = false
-    //        self.clientPhone = ""
-    //        self.visitorPhone = ""
-    //        self.country = ""
-    //        self.countryRu = ""
-    //        self.city = ""
-    //        self.cityRu = ""
-    //        self.duration = ""
-    //        self.liked = false            //?
-    //
-    //
-    //        self.widgetId = 0
-    //        self.browser = ""
-    //        self.visits = 1
-    //        self.feedbackComment = ""       //?
-    //        self.page = ""
-    //        self.ip = ""
-    //        self.timeOnSite = ""
-    //        self.viewedPages = 0
-    //        self.comment = ""
-    //        self.hasFileName = false
-    //
-    //
-    //        super.init()
-    //
-    //    }
-    
-    
-    
-    //    init ( time: String, clientPhone: String, visitorPhone: String, free: Bool, visits: String,country: String, city: String, browser: String, status: String, duration: String ) {
-    
-    //    }
-    
 }
 

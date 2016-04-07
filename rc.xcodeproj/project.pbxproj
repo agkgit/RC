@@ -10,6 +10,7 @@
 		AE0671EA1CA1E1CB00F926A5 /* pause40.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0671E81CA1E1CB00F926A5 /* pause40.png */; };
 		AE0671EB1CA1E1CB00F926A5 /* play40.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0671E91CA1E1CB00F926A5 /* play40.png */; };
 		AE0B53881CA0A73F00CA80C4 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE0B53871CA0A73E00CA80C4 /* sound.mp3 */; };
+		AE46B4861CB7078300E8C751 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */; };
 		AE508A511CB30B6800FF2EDB /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A501CB30B6800FF2EDB /* history.png */; };
 		AE508A531CB30E1A00FF2EDB /* Oval7.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A521CB30E1A00FF2EDB /* Oval7.png */; };
 		AE508A551CB3117F00FF2EDB /* Oval3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE508A541CB3117F00FF2EDB /* Oval3.png */; };
@@ -22,7 +23,6 @@
 		AE832A401C92142700E3D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3F1C92142700E3D08B /* Assets.xcassets */; };
 		AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A411C92142700E3D08B /* LaunchScreen.storyboard */; };
 		AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */; };
-		AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */; };
 		AE832A531C921CD700E3D08B /* calls.json in Resources */ = {isa = PBXBuildFile; fileRef = AE832A521C921CD700E3D08B /* calls.json */; };
 		AE9BE35E1C975BBD00EF75D1 /* rc_free.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9BE35C1C975BBD00EF75D1 /* rc_free.png */; };
 		AE9BE35F1C975BBD00EF75D1 /* rc_business.png in Resources */ = {isa = PBXBuildFile; fileRef = AE9BE35D1C975BBD00EF75D1 /* rc_business.png */; };
@@ -37,6 +37,7 @@
 		AE0671E81CA1E1CB00F926A5 /* pause40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause40.png; sourceTree = "<group>"; };
 		AE0671E91CA1E1CB00F926A5 /* play40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play40.png; sourceTree = "<group>"; };
 		AE0B53871CA0A73E00CA80C4 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		AE508A501CB30B6800FF2EDB /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
 		AE508A521CB30E1A00FF2EDB /* Oval7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval7.png; sourceTree = "<group>"; };
 		AE508A541CB3117F00FF2EDB /* Oval3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval3.png; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		AE832A421C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE832A441C92142700E3D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedConnectCallInfo.swift; path = ../RedConnectCallInfo.swift; sourceTree = "<group>"; };
 		AE832A521C921CD700E3D08B /* calls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calls.json; sourceTree = "<group>"; };
 		AE9BE35C1C975BBD00EF75D1 /* rc_free.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rc_free.png; sourceTree = "<group>"; };
 		AE9BE35D1C975BBD00EF75D1 /* rc_business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rc_business.png; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 				AEC568AE1C961791000FE247 /* images */,
 				AE832A521C921CD700E3D08B /* calls.json */,
 				AE82AC871C944608006D1D7B /* RCHistory.swift */,
-				AE832A501C921B1100E3D08B /* RedConnectCallInfo.swift */,
 				AE5F0BD21C92229400961296 /* TableViewController.swift */,
+				AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */,
 				AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */,
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
 				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE832A511C921B1100E3D08B /* RedConnectCallInfo.swift in Sources */,
+				AE46B4861CB7078300E8C751 /* AuthorizationViewController.swift in Sources */,
 				AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */,
 				AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */,
 				AEA5B57D1C94DBE8009306AC /* TableViewCell.swift in Sources */,
