@@ -45,6 +45,18 @@ class AuthorizationViewController: UIViewController {
         if (loginTextField.text == "" || passTextField.text == "" ) {
             warningLabel.text = "Введите логин и/или пароль"
         }
+
+        let urlString = "http://redhelper.ru/my/api/auth?login=\(loginTextField.text!)&password=\(passTextField.text!)"
+        
+        if let url = NSURL(string: urlString) {
+            if let data = try? NSData(contentsOfURL: url, options: []) {
+                let json = JSON(data: data)
+                
+                AppData.restKey = json["key"].string
+                print(AppData.restKey)
+            }
+        }
+        
     }
     
 
