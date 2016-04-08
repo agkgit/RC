@@ -9,25 +9,12 @@
 import UIKit
 
 class AuthorizationViewController: UIViewController {
-
-//    @IBOutlet weak var loginTextField: UITextField!
-//    @IBOutlet weak var passwordTextField: UITextField!
-//    
-//    
-//    
-//    
-//    @IBAction func signAction(sender: AnyObject) {
-//        
-//    }
     
-//    @IBAction func loginEditingDidBegin(sender: AnyObject) {
-//        if passwordTextField.text == "Логин" { passwordTextField.text = "" }
-//
-//    }
-    
-//    @IBAction func passwordEditingDidBegin(sender: AnyObject) {
-//        if passwordTextField.text == "Пароль" { passwordTextField.text = "" }
-//    }
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var passLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -51,5 +38,29 @@ class AuthorizationViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func signAction(sender: AnyObject) {
+        
+        if (loginTextField.text == "" || passTextField.text == "" ) {
+            warningLabel.text = "Введите логин и/или пароль"
+        }
+    }
+    
 
+    @IBAction func loginEditingDidBegin(sender: AnyObject) {
+        if loginLabel.hidden == false { loginLabel.hidden = true }
+    }
+    
+    @IBAction func passEditingDidBegin(sender: AnyObject) {
+        if passLabel.hidden == false { passLabel.hidden = true }
+    }
+    
+    @IBAction func loginEditingDidEnd(sender: AnyObject) {
+        if loginTextField.text == "" { loginLabel.hidden = false }
+    }
+
+    @IBAction func passEditingDidEnd(sender: AnyObject) {
+        if passTextField.text == "" { passLabel.hidden = false }
+    }
 }
