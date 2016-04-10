@@ -54,6 +54,19 @@ class AuthorizationViewController: UIViewController {
                 
                 AppData.restKey = json["key"].string
                 print(AppData.restKey)
+                
+                let urlString = "http://redhelper.ru/my/api/rc/calls?sh=100&q=100&key=" + AppData.restKey
+                
+                let url = NSURL(string: urlString)
+                let data = try? NSData(contentsOfURL: url!, options: [])
+                let json1 = JSON(data: data!)
+                print(json1)
+
+
+            
+                // переход на другую VIEW
+            
+            
             }
         }
         

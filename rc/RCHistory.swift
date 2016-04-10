@@ -11,9 +11,15 @@ import UIKit
 class RCHistory: NSObject {
     
     static func getSectors() -> [String] {
-        let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
-        let data = NSData(contentsOfFile: file) as NSData!
-        let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
+        
+        
+        
+        let urlString = "http://redhelper.ru/rc/calls?sh=48&q=48&widgetId=262668&key=kcQkvJSLW79461Ehr4lyWD2vRM6ZVN1eyapT-pU4Nf8r-GVzpJL9tHmmFzp3jNdv" //+ AppData.restKey
+        
+        let url = NSURL(string: urlString)
+        let data = try? NSData(contentsOfURL: url!, options: [])
+        let json = JSON(data: data!)
+        
         var days = [String]()
         
         for i in 0 ..< json.count {
@@ -29,11 +35,18 @@ class RCHistory: NSObject {
         
         var callsHistoryArray = [RedConnectCallData]()
         
-        let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
-        let data = NSData(contentsOfFile: file) as NSData!
-        let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
+//        let file = NSBundle.mainBundle().pathForResource("calls", ofType: "json") as String!
+//        let data = NSData(contentsOfFile: file) as NSData!
+//        let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
         
-        print("json.count = \(json.count)")
+        
+        
+        let urlString = "http://redhelper.ru/rc/calls?sh=48&q=48&widgetId=262668&key=kcQkvJSLW79461Ehr4lyWD2vRM6ZVN1eyapT-pU4Nf8r-GVzpJL9tHmmFzp3jNdv" //+ AppData.restKey
+        
+        let url = NSURL(string: urlString)
+        let data = try? NSData(contentsOfURL: url!, options: [])
+        let json = JSON(data: data!)
+        
         
         for i in 0 ..< json.count {
             
