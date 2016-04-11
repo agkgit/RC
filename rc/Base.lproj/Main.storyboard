@@ -107,8 +107,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="История" id="Mul-Gt-WqZ"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="История" id="Mul-Gt-WqZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="EEt-Ls-9on">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ev-eP-6Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,7 +121,7 @@
         <!--История-->
         <scene sceneID="Ip4-QA-7co">
             <objects>
-                <navigationController title="История" automaticallyAdjustsScrollViewInsets="NO" id="2Uz-kr-Sd1" sceneMemberID="viewController">
+                <navigationController title="История" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="2Uz-kr-Sd1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="История" image="icon_payment_hover" selectedImage="icon_payment_hover" id="5Md-wp-Xbj">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -131,10 +134,9 @@
                         <color key="barTintColor" red="0.63529411764705879" green="0.086274509803921567" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="yuF-qu-uTE">
-                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yuF-qu-uTE">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </toolbar>
                     <connections>
                         <segue destination="wqk-LR-ZZz" kind="relationship" relationship="rootViewController" id="HTd-rp-qM3"/>
@@ -171,7 +173,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVB-eK-yaE">
                                 <rect key="frame" x="130" y="335" width="60" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Войти"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="0.58823529409999997" green="0.086274509799999996" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signAction:" destination="BeO-nf-SxO" eventType="touchUpInside" id="L2I-sb-A0h"/>
                                 </connections>
