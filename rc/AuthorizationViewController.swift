@@ -19,6 +19,10 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print(RCHistory.getSectors())
+        
 
         // Do any additional setup after loading the view.
     }
