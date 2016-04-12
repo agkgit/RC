@@ -10,23 +10,50 @@ import UIKit
 
 class RCHistory: NSObject {
     
-    static func getSectors() -> [String] {
+    static func getCallsHistoryWithSectors() -> [String: [RedConnectCallData]] {
         
-        let urlString = "http://redhelper.ru/my/api/rc/calls?sh=100&q=100&key=" + AppData.restKey
-        
-        let url = NSURL(string: urlString)
-        let data = try? NSData(contentsOfURL: url!, options: [])
-        let json = JSON(data: data!)
-        
+        let callsHistoryArray = self.GetCallsHistoryArray()
+        var formattedDaysArray = [String]()
         var daysSet: Set<String> = []
-        var days = [String]()
         
-        for i in 0 ..< json.count { daysSet.insert(RCDataFormat.dateFormat(json[i]["time"].string!)) }
+        var callsHistoryWithSectors = [String: [RedConnectCallData]]()
         
-        //for i in 0 ..< json.count { days.append(RCDataFormat.dateFormat(json[i]["time"].string!)) }
-        days = daysSet.sort(>)
+        for call in callsHistoryArray { daysSet.insert(call.date) }
         
-        return days
+        formattedDaysArray = daysSet.sort(>)
+        
+        for formattedDay in formattedDaysArray {
+            for call in callsHistoryArray {
+                if call.date == formattedDay { callsHistoryWithSectors[formattedDay]?.append(call) }
+            }
+        }
+        
+        
+        
+        
+        return callsHistoryWithSectors
+        
+//        let urlString = "http://redhelper.ru/my/api/rc/calls?sh=100&q=100&key=" + AppData.restKey
+//        
+//        let url = NSURL(string: urlString)
+//        let data = try? NSData(contentsOfURL: url!, options: [])
+//        let json = JSON(data: data!)
+//        
+//        var daysSet: Set<String> = []
+//        var days = [String]()
+//        var formattedDays = [String]()
+//        
+//        for i in 0 ..< json.count { daysSet.insert( RCDataFormat.dateWithoutTime(json[i]["time"].string!) ) }
+//        
+//        days = daysSet.sort(>)
+//        
+//        for day in days {
+//             formattedDays.append( RCDataFormat.dateFormat(day) )
+//        }
+//        
+//        
+//        
+//        return formattedDays
         
     }
     
@@ -35,7 +62,7 @@ class RCHistory: NSObject {
         
         var callsHistoryArray = [RedConnectCallData]()
         
-        let urlString = "http://redhelper.ru/rc/calls?sh=100&q=100&key=" + AppData.restKey
+        let urlString = "http://redhelper.ru/my/api/rc/calls?sh=100&q=100&key=" + AppData.restKey
         
         let url = NSURL(string: urlString)
         let data = try? NSData(contentsOfURL: url!, options: [])
@@ -112,6 +139,13 @@ class RedConnectCallData: NSObject {
     var status: String!
     var comment: String!
     var filename: String!
+    
+    var date: String {
+        get {
+            let dateWithTimeArray = time.componentsSeparatedByString(" ")
+            return dateWithTimeArray[0]
+        }
+    }
     
 }
 

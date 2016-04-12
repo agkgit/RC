@@ -21,7 +21,7 @@ class AuthorizationViewController: UIViewController {
         super.viewDidLoad()
         
         
-        print(RCHistory.getSectors())
+        print(RCHistory.getCallsHistoryWithSectors())
         
 
         // Do any additional setup after loading the view.
