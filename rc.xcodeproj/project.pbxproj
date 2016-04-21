@@ -86,6 +86,16 @@
 			name = tab_bar_icons;
 			sourceTree = "<group>";
 		};
+		AE79298F1CC98099003C3B1E /* RC */ = {
+			isa = PBXGroup;
+			children = (
+				AE82AC871C944608006D1D7B /* RCHistory.swift */,
+				84FD3BBF1CB7BCAC00872A19 /* RCPlayer.swift */,
+				8464FD151CBD59BF00E2352A /* RCDataFormat.swift */,
+			);
+			name = RC;
+			sourceTree = "<group>";
+		};
 		AE832A2C1C92142700E3D08B = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +118,7 @@
 				AE5521551CB5A60A0072A11E /* tab_bar_icons */,
 				AEC568AE1C961791000FE247 /* images */,
 				AE832A521C921CD700E3D08B /* calls.json */,
-				84FD3BBF1CB7BCAC00872A19 /* RCPlayer.swift */,
-				AE82AC871C944608006D1D7B /* RCHistory.swift */,
-				8464FD151CBD59BF00E2352A /* RCDataFormat.swift */,
+				AE79298F1CC98099003C3B1E /* RC */,
 				AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */,
 				AE5F0BD21C92229400961296 /* TableViewController.swift */,
 				AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */,

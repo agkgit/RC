@@ -14,15 +14,19 @@ class TableViewCell: UITableViewCell {
     
     var callID: Int!
     
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var visitorPhone: UILabel!
-    @IBOutlet weak var clientPhone: UILabel!
-    @IBOutlet weak var arrow: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
-    @IBOutlet weak var flagImage: UIImageView!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var likedImage: UIImageView!
-    @IBOutlet weak var playButton: UIButton!
+    
+    
+    
+    
+//    @IBOutlet weak var time: UILabel!
+//    @IBOutlet weak var visitorPhone: UILabel!
+//    @IBOutlet weak var clientPhone: UILabel!
+//    @IBOutlet weak var arrow: UILabel!
+//    @IBOutlet weak var statusImage: UIImageView!
+//    @IBOutlet weak var flagImage: UIImageView!
+//    @IBOutlet weak var cityLabel: UILabel!
+//    @IBOutlet weak var likedImage: UIImageView!
+//    @IBOutlet weak var playButton: UIButton!
 
     
     

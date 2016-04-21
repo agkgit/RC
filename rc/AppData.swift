@@ -11,5 +11,7 @@ import UIKit
 class AppData: NSObject {
     
     static var restKey: String! = "kcQkvJSLW79461Ehr4lyWD2vRM6ZVN1eyapT-pU4Nf8r-GVzpJL9tHmmFzp3jNdv"
+    
+    // ॥  ⃞
 
 }
