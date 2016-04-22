@@ -55,7 +55,7 @@ class RCHistory: NSObject {
             
             let callElement = json[i]
 
-            if let id =                 callElement[""].int                     { call.id = id }
+            if let id =                 callElement["id"].int                   { call.id = id }
             if let widgetId =           callElement["widgetId"].int             { call.widgetId = widgetId }
             if let time =               callElement["time"].string              { call.time = time }
             if let requestTimestamp =   callElement["requestTimestamp"].string  { call.requestTimestamp = requestTimestamp }
@@ -84,6 +84,7 @@ class RCHistory: NSObject {
             if let filename =           callElement["filename"].string          { call.filename = filename }
                 
             callsHistoryArray.append(call)
+            print(call)
         }
         
         return callsHistoryArray

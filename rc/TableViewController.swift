@@ -68,10 +68,14 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
         let cellData = callsHistory[indexPath.section][indexPath.row]
-        
+        print(sectors[indexPath.section])
         cell.callID = cellData.id
         
-        cell.timeLabel?.text = cellData.time
+        
+        if let time = cellData.time {
+            cell.timeLabel?.text = RCDataFormat.timeFormat(time)
+        }
+        
         
         if let visitorPhone = cellData.visitorPhone {
             cell.visitorPhoneLabel.text = phoneNumberFormat(visitorPhone)
