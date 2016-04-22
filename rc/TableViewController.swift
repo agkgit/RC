@@ -85,6 +85,15 @@ class TableViewController: UITableViewController {
             cell.cityLabel?.text = cityRu
         }
         
+        if let imageNamed = cellData.country {
+            if imageNamed == "Russian Federation" {
+                cell.flagImage.image = UIImage(named: "Russia.png")
+            } else {
+                let named = RCDataFormat.replaceChar(imageNamed, replace: " ", replaced: "-")
+                cell.flagImage.image = UIImage(named: named + ".png")
+            }
+        }
+        
         return cell
     }
     

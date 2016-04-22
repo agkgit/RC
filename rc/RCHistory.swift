@@ -84,7 +84,6 @@ class RCHistory: NSObject {
             if let filename =           callElement["filename"].string          { call.filename = filename }
                 
             callsHistoryArray.append(call)
-            print(call)
         }
         
         return callsHistoryArray

@@ -66,6 +66,21 @@ class RCDataFormat: NSObject {
         return time
     }
     
+    static func replaceChar (str: String, replace: Character, replaced: Character) -> String {
+        var str1 = ""
+        for Character in str.characters {
+            var i = Character
+            if i == replace {
+                i = replaced
+            }
+            str1.append(i)
+        }
+        
+        return str1
+    }
+    
+    // Функция замены символов в строке
+    
 //    Для нашего современного календаря:
 //    
 //    W = d + [ (13m - 1) / 5 ] + y + [ y / 4 ] + [ c / 4 ] - 2c
