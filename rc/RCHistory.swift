@@ -22,6 +22,7 @@ class RCHistory: NSObject {
         daysArray = daysSet.sort(>)
         
         for i in 0 ..< daysArray.count {
+            callsHistoryWithSectors.append([RedConnectCallData()])
             for call in callsHistoryArray {
                 if call.date == daysArray[i] { callsHistoryWithSectors[i].append(call) }
             }
@@ -29,8 +30,8 @@ class RCHistory: NSObject {
         
         var formattedDaysArray = [String]()
         
-        for i in 0 ..< daysArray.count {
-            formattedDaysArray[i] = RCDataFormat.dateFormat(daysArray[i])
+        for day in daysArray {
+            formattedDaysArray.append(RCDataFormat.dateFormat(day))
         }
         
         return (formattedDaysArray, callsHistoryWithSectors)

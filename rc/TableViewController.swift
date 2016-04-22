@@ -67,36 +67,19 @@ class TableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
-        let cellData = callsDay[indexPath.section][indexPath.row]
+        let cellData = callsHistory[indexPath.section][indexPath.row]
         
         cell.callID = cellData.id
         
-        cell.time?.text = cellData.time
+        cell.timeLabel?.text = cellData.time
         
         if let visitorPhone = cellData.visitorPhone {
-            cell.visitorPhone.text = phoneNumberFormat(visitorPhone)
-        }
-        
-        if  let clientPhone = cellData.clientPhone {
-            cell.clientPhone.text = phoneNumberFormat(clientPhone)
+            cell.visitorPhoneLabel.text = phoneNumberFormat(visitorPhone)
         }
         
         if let cityRu = cellData.cityRu {
             cell.cityLabel?.text = cityRu
         }
-        
-        cell.arrow?.text = "\u{2192}"
-        
-        //        if callsDay[indexPath.section][indexPath.row].liked == true { cell.likedImage?.image = UIImage(named: "liked_true.png") }
-        //        else if callsDay[indexPath.section][indexPath.row].liked == false { cell.likedImage?.image = UIImage(named: "liked_false.png") }
-        
-        
-        cell.statusImage?.image = UIImage(named: "status_normal.png")
-        cell.flagImage?.image = UIImage(named: "Russia.png")
-        
-        cell.playButton.setImage(UIImage(named: "play40.png"), forState: UIControlState.Normal)
-        cell.playButton.setImage(UIImage(named: "pause40.png"), forState: UIControlState.Highlighted)
-        
         
         return cell
     }

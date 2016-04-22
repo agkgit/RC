@@ -89,6 +89,7 @@
 		AE79298F1CC98099003C3B1E /* RC */ = {
 			isa = PBXGroup;
 			children = (
+				84FD3BC11CB7F08900872A19 /* AppData.swift */,
 				AE82AC871C944608006D1D7B /* RCHistory.swift */,
 				84FD3BBF1CB7BCAC00872A19 /* RCPlayer.swift */,
 				8464FD151CBD59BF00E2352A /* RCDataFormat.swift */,
@@ -125,7 +126,6 @@
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
 				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
 				AE832A3C1C92142700E3D08B /* Main.storyboard */,
-				84FD3BC11CB7F08900872A19 /* AppData.swift */,
 				AE832A3F1C92142700E3D08B /* Assets.xcassets */,
 				AE832A411C92142700E3D08B /* LaunchScreen.storyboard */,
 				AE832A441C92142700E3D08B /* Info.plist */,

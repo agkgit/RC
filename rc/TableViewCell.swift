@@ -14,9 +14,15 @@ class TableViewCell: UITableViewCell {
     
     var callID: Int!
     
+    @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var likedImage: UIImageView!
     
-    
+    @IBOutlet weak var visitorPhoneLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
 //    @IBOutlet weak var time: UILabel!
 //    @IBOutlet weak var visitorPhone: UILabel!
@@ -40,20 +46,20 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func playButtonAction(sender: AnyObject) {
-
-        if RCPlayer.player != nil { RCPlayer.player.stop() }
-        
-        let url: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
-        do { RCPlayer.player = try AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil) }
-        catch let error as NSError { print(error.description) }
-        //RCPlayer.player.numberOfLoops = 0
-        //RCPlayer.player.prepareToPlay()
-        RCPlayer.player.play()
-        
+//    @IBAction func playButtonAction(sender: AnyObject) {
+//
+//        if RCPlayer.player != nil { RCPlayer.player.stop() }
+//        
+//        let url: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
+//        do { RCPlayer.player = try AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil) }
+//        catch let error as NSError { print(error.description) }
+//        //RCPlayer.player.numberOfLoops = 0
+//        //RCPlayer.player.prepareToPlay()
+//        RCPlayer.player.play()
+    
         //        let url = NSURL(string: "https://redhelper.ru/my/rc/calls/mp3/\(callID).mp3")
         //        downloadFileFromURL(url!)
-    }
+//    }
     
     //    func downloadFileFromURL(url:NSURL){
     //        var downloadTask:NSURLSessionDownloadTask
@@ -83,10 +89,5 @@ class TableViewCell: UITableViewCell {
     //        }
     //        
     //    }
-    
-    
-    
-    
-    
     
 }
