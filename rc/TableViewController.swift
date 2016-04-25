@@ -69,7 +69,6 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
         let cellData = callsHistory[indexPath.section][indexPath.row]
-        print(sectors[indexPath.section])
         cell.callID = cellData.id
         
         //
@@ -109,9 +108,17 @@ class TableViewController: UITableViewController {
                 cell.statusImage.image = UIImage(named: "icon_call_failed")
             }
             
-            if status == "normal" {
-            }
+//            if status == "normal" {
+//                
+//            }
             
+        }
+        
+        //
+        if let comment = cellData.comment {
+            if comment != "" {
+                cell.commentImage.image = UIImage(named: "icon_comment")
+            }
         }
         
         
