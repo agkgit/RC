@@ -49,25 +49,25 @@
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ 0 (000) 000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzl-sJ-Ist">
-                                            <rect key="frame" x="46" y="5" width="180" height="21"/>
+                                            <rect key="frame" x="42" y="5" width="180" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unknown.png" translatesAutoresizingMaskIntoConstraints="NO" id="GSg-XH-FHf">
-                                            <rect key="frame" x="53" y="34" width="15" height="15"/>
+                                            <rect key="frame" x="46" y="34" width="15" height="15"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-gk-9c5">
-                                            <rect key="frame" x="168" y="34" width="15" height="15"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
+                                            <rect key="frame" x="161" y="34" width="15" height="15"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTt-Et-oYb">
-                                            <rect key="frame" x="191" y="34" width="15" height="15"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_report_default" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-gk-9c5">
+                                            <rect key="frame" x="184" y="34" width="15" height="15"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkb-Uv-VXh">
-                                            <rect key="frame" x="214" y="34" width="15" height="15"/>
+                                            <rect key="frame" x="138" y="34" width="15" height="15"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Неизвестно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHt-xm-EQE">
-                                            <rect key="frame" x="76" y="31" width="61" height="21"/>
+                                            <rect key="frame" x="65" y="31" width="61" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -87,8 +87,8 @@
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_call_failed" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
-                                            <rect key="frame" x="145" y="34" width="15" height="15"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_comment_default" translatesAutoresizingMaskIntoConstraints="NO" id="eTt-Et-oYb">
+                                            <rect key="frame" x="207" y="34" width="15" height="15"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ev-eP-6Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="-2006"/>
+            <point key="canvasLocation" x="-483" y="-2001"/>
         </scene>
         <!--История-->
         <scene sceneID="Ip4-QA-7co">
@@ -311,8 +311,9 @@
     <resources>
         <image name="RedConnect_logo_color" width="500" height="324"/>
         <image name="Unknown.png" width="48" height="48"/>
-        <image name="icon_call_failed" width="12" height="12"/>
+        <image name="icon_comment_default" width="13" height="13"/>
         <image name="icon_payment_hover" width="24" height="24"/>
+        <image name="icon_report_default" width="14" height="12"/>
         <image name="icon_setup_active" width="24" height="24"/>
         <image name="icon_view_active" width="24" height="24"/>
     </resources>
