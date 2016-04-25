@@ -62,37 +62,59 @@ class TableViewController: UITableViewController {
         return headView
     }
     
-    
+    //заполнение
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        //
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
         let cellData = callsHistory[indexPath.section][indexPath.row]
         print(sectors[indexPath.section])
         cell.callID = cellData.id
         
-        
+        //
         if let time = cellData.time {
             cell.timeLabel?.text = RCDataFormat.timeFormat(time)
         }
         
-        
+        //
         if let visitorPhone = cellData.visitorPhone {
             cell.visitorPhoneLabel.text = phoneNumberFormat(visitorPhone)
         }
         
+        //
         if let cityRu = cellData.cityRu {
             cell.cityLabel?.text = cityRu
         }
         
+        //
         if let imageNamed = cellData.country {
-            if imageNamed == "Russian Federation" {
-                cell.flagImage.image = UIImage(named: "Russia.png")
-            } else {
-                let named = RCDataFormat.replaceChar(imageNamed, replace: " ", replaced: "-")
-                cell.flagImage.image = UIImage(named: named + ".png")
-            }
+            let named = RCDataFormat.replaceChar(imageNamed, replace: " ", replaced: "-")
+            cell.flagImage.image = UIImage(named: named + ".png")
         }
+        
+        //
+        if let status = cellData.status {
+            
+            switch status {
+            case "normal":
+                if cellData.free == false { cell.statusImage.image = UIImage(named: "icon_call_success") }
+                else { cell.statusImage.image = UIImage(named: "icon_operator_done") }
+                
+            case "operator_unavailable":
+                cell.statusImage.image = UIImage(named: "icon_operator_false")
+            //case "operator_hangup":
+            //    cell.statusImage.image = UIImage(named: "icon_operator_done")
+            default:
+                cell.statusImage.image = UIImage(named: "icon_call_failed")
+            }
+            
+            if status == "normal" {
+            }
+            
+        }
+        
+        
         
         return cell
     }
