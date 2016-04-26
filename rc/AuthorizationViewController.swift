@@ -56,26 +56,26 @@ class AuthorizationViewController: UIViewController {
             if let data = try? NSData(contentsOfURL: url, options: []) {
                 let json = JSON(data: data)
                 
-                AppData.restKey = json["key"].string
-                print(AppData.restKey)
-                
-                let urlString = "http://redhelper.ru/my/api/rc/calls?sh=100&q=100&key=" + AppData.restKey
-                
-                let url = NSURL(string: urlString)
-                let data = try? NSData(contentsOfURL: url!, options: [])
-                let json1 = JSON(data: data!)
-                print(json1)
-
-
-            
-                // переход на другую VIEW
-            
-            
+                if let restkey = json["key"].string {
+                    AppData.restKey = restkey
+                    // переход на другую VIEW
+                    
+//                    var tabBar = storyboard?.instantiateViewControllerWithIdentifier("UITabBar")
+//                    self.navigationController?.pushViewController(tabBar!, animated: true)
+                    
+//ViewController *testViewController = (ViewController *)[storyboard  instantiateViewControllerWithIdentifier:@"ViewController"]; // identifier вам нужно, чтобы был проставлен в Storyboard.
+                    
+                    
+                    //[self.navigationController pushViewController:testViewController animated:YES];
+                }
+//                } else {
+//                    //ошибка
+//                }
             }
         }
         
     }
-    
+
 
     @IBAction func loginEditingDidBegin(sender: AnyObject) {
         if loginLabel.hidden == false { loginLabel.hidden = true }
