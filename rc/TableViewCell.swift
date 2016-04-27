@@ -16,13 +16,14 @@ class TableViewCell: UITableViewCell {
     
     //Buttons
     @IBOutlet weak var playButton:      UIButton!
-    @IBOutlet weak var scheduledImage:  UIImageView!
     
     //Images
     @IBOutlet weak var flagImage:       UIImageView!
     @IBOutlet weak var statusImage:     UIImageView!
     @IBOutlet weak var likedImage:      UIImageView!
     @IBOutlet weak var commentImage:    UIImageView!
+    @IBOutlet weak var scheduledImage:  UIImageView!
+
     
     //Labels
     @IBOutlet weak var visitorPhoneLabel:   UILabel!

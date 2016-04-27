@@ -59,7 +59,7 @@ class RCHistory: NSObject {
             if let widgetId =           callElement["widgetId"].int             { call.widgetId = widgetId }
             if let time =               callElement["time"].string              { call.time = time }
             if let requestTimestamp =   callElement["requestTimestamp"].string  { call.requestTimestamp = requestTimestamp }
-            if let scheduled =          callElement["scheduled"].int            { call.scheduled = scheduled }
+            if let scheduled =          callElement["scheduled"].bool            { call.scheduled = scheduled }
             if let clientPhone =        callElement["clientPhone"].string       { call.clientPhone = clientPhone }
             if let visitorPhone =       callElement["visitorPhone"].string      { call.visitorPhone = visitorPhone }
             if let vid =                callElement["vid"].int                  { call.vid = vid }
@@ -96,7 +96,7 @@ class RedConnectCallData: NSObject {
     var widgetId: Int!
     var time: String!
     var requestTimestamp: String!
-    var scheduled: Int!
+    var scheduled: Bool!
     var clientPhone:  String!
     var visitorPhone: String!
     var vid: Int!

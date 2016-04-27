@@ -121,6 +121,12 @@ class TableViewController: UITableViewController {
             }
         }
         
+        if let scheduled = cellData.scheduled {
+            if scheduled {
+                cell.scheduledImage.image = UIImage(named: "icon_timecall_true")
+            }
+        }
+        
         
         
         return cell
