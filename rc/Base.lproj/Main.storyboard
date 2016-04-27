@@ -115,15 +115,21 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="История" id="Mul-Gt-WqZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="EEt-Ls-9on">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0Ek-Py-IjO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="szy-pa-HNL">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ev-eP-6Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-405" y="-2001"/>
+            <point key="canvasLocation" x="-504" y="-2001"/>
         </scene>
         <!--История-->
         <scene sceneID="Ip4-QA-7co">
@@ -152,7 +158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQG-Pw-tDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="-2001"/>
+            <point key="canvasLocation" x="-895" y="-2001"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="0XW-b4-5SD">
@@ -169,16 +175,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedConnect_logo_color" translatesAutoresizingMaskIntoConstraints="NO" id="qEF-X9-M6U">
                                 <rect key="frame" x="63" y="91" width="200" height="129"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVB-eK-yaE">
-                                <rect key="frame" x="130" y="335" width="60" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Войти">
-                                    <color key="titleColor" red="0.58823529409999997" green="0.086274509799999996" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3v-yQ-RaR">
+                                <rect key="frame" x="71" y="321" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-PL-CZx">
+                                <rect key="frame" x="71" y="250" width="178" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="signAction:" destination="BeO-nf-SxO" eventType="touchUpInside" id="L2I-sb-A0h"/>
+                                    <action selector="loginEditingDidBegin:" destination="BeO-nf-SxO" eventType="editingDidBegin" id="kdm-nt-UUF"/>
+                                    <action selector="loginEditingDidEnd:" destination="BeO-nf-SxO" eventType="editingDidEnd" id="cgb-RD-yV3"/>
                                 </connections>
-                            </button>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-fD-07o">
                                 <rect key="frame" x="71" y="288" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -188,12 +199,6 @@
                                     <action selector="passEditingDidEnd:" destination="BeO-nf-SxO" eventType="editingDidEnd" id="FwA-nx-8W4"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3v-yQ-RaR">
-                                <rect key="frame" x="71" y="321" width="178" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt1-JL-Vte">
                                 <rect key="frame" x="82" y="254" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -206,15 +211,16 @@
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-PL-CZx">
-                                <rect key="frame" x="71" y="250" width="178" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVB-eK-yaE">
+                                <rect key="frame" x="130" y="335" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="0.58823529409999997" green="0.086274509799999996" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="loginEditingDidBegin:" destination="BeO-nf-SxO" eventType="editingDidBegin" id="kdm-nt-UUF"/>
-                                    <action selector="loginEditingDidEnd:" destination="BeO-nf-SxO" eventType="editingDidEnd" id="cgb-RD-yV3"/>
+                                    <action selector="signAction:" destination="BeO-nf-SxO" eventType="touchUpInside" id="L2I-sb-A0h"/>
                                 </connections>
-                            </textField>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -225,11 +231,12 @@
                         <outlet property="passLabel" destination="Igu-nI-wQg" id="h5x-MW-Gpn"/>
                         <outlet property="passTextField" destination="ceR-fD-07o" id="fvc-Tf-c5L"/>
                         <outlet property="warningLabel" destination="F3v-yQ-RaR" id="TDC-aY-czB"/>
+                        <segue destination="pUA-f3-Lck" kind="show" identifier="segueSignIn" id="qgc-9m-Sj6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lag-up-Jjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1726" y="-1972"/>
+            <point key="canvasLocation" x="-1664" y="-2001"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aF9-xP-Tj3">
@@ -249,7 +256,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slb-bh-YYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1261" y="-2001"/>
+            <point key="canvasLocation" x="-1270" y="-2001"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="F1e-sa-pON">

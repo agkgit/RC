@@ -20,9 +20,8 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        print(RCHistory.getCallsHistoryWithSectors())
-        
+        loginTextField.text = ""
+        passTextField.text = ""
 
         // Do any additional setup after loading the view.
     }
@@ -58,19 +57,13 @@ class AuthorizationViewController: UIViewController {
                 
                 if let restkey = json["key"].string {
                     AppData.restKey = restkey
-                    // переход на другую VIEW
-                    
-//                    var tabBar = storyboard?.instantiateViewControllerWithIdentifier("UITabBar")
-//                    self.navigationController?.pushViewController(tabBar!, animated: true)
-                    
-//ViewController *testViewController = (ViewController *)[storyboard  instantiateViewControllerWithIdentifier:@"ViewController"]; // identifier вам нужно, чтобы был проставлен в Storyboard.
-                    
-                    
-                    //[self.navigationController pushViewController:testViewController animated:YES];
+                    if AppData.restKey != "" {
+                        self.performSegueWithIdentifier("segueSignIn", sender: nil)
+                    }
+                } else {
+                    warningLabel.text = "Проверьте логин/пароль"
+                    passTextField.text = ""
                 }
-//                } else {
-//                    //ошибка
-//                }
             }
         }
         
