@@ -43,7 +43,6 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return callsHistory[section].count
     }
     
@@ -202,6 +201,11 @@ class TableViewController: UITableViewController {
      */
     
     
+    @IBAction func segueSignOutAction(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segueSignOut", sender: nil)
+        
+    }
     
     func phoneNumberFormat (number: String) -> String {
         
