@@ -17,12 +17,15 @@ class TableViewController: UITableViewController {
     var callsHistory = [[RedConnectCallData]]()
     var player = AVAudioPlayer()
     
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     override func viewDidLoad() {
-        
         (sectors, callsHistory) = RCHistory.getCallsHistoryWithSectors()
-
         super.viewDidLoad()
     }
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,20 +34,27 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return sectors[section]
-        
     }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return callsHistory.count
     }
     
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return callsHistory[section].count
     }
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////
     
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -62,14 +72,23 @@ class TableViewController: UITableViewController {
     }
     
     //заполнение
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
         
+        //
         let cellData = callsHistory[indexPath.section][indexPath.row]
-        cell.callID = cellData.id
+        print("callsHistory[\(indexPath.section)][\(indexPath.row)]")
         
+        //
+        if let id = cellData.id {
+            cell.callID = id
+        }
+
         //
         if let time = cellData.time {
             cell.timeLabel?.text = RCDataFormat.timeFormat(time)
@@ -77,7 +96,7 @@ class TableViewController: UITableViewController {
         
         //
         if let visitorPhone = cellData.visitorPhone {
-            cell.visitorPhoneLabel.text = phoneNumberFormat(visitorPhone)
+            cell.visitorPhoneLabel.text = RCDataFormat.phoneNumberFormat(visitorPhone)
         }
         
         //
@@ -151,7 +170,8 @@ class TableViewController: UITableViewController {
     //    }
     
     
-    
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         //Social
         let infoAction = UITableViewRowAction(style: .Default, title: "ИНФО", handler: { (actin, indexPath) -> Void in
@@ -205,26 +225,5 @@ class TableViewController: UITableViewController {
         
         self.performSegueWithIdentifier("segueSignOut", sender: nil)
         
-    }
-    
-    func phoneNumberFormat (number: String) -> String {
-        
-        var phone: String = "+"
-        var i = 0
-        let space: Character = " "
-        let bktOpen: Character = "("
-        let bktClose: Character = ")"
-        let dash: Character = "-"
-        
-        for char in number.characters {
-            phone.append(char)
-            if (i == 3) { phone.append(bktClose) }
-            if (i == 0) || (i == 3) { phone.append(space) }
-            if (i == 0) { phone.append(bktOpen) }
-            if (i == 6) || (i == 8) { phone.append(dash)}
-            i += 1
-        }
-        
-        return phone
     }
 }

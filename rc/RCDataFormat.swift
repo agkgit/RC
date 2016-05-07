@@ -78,6 +78,7 @@ class RCDataFormat: NSObject {
         
         return str1
     }
+
     
     // Функция замены символов в строке
     

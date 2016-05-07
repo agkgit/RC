@@ -47,6 +47,8 @@ class TableViewCell: UITableViewCell {
         let url: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
         do { RCPlayer.player = try AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil) }
         catch let error as NSError { print(error.description) }
+        
+        
         //RCPlayer.player.numberOfLoops = 0
         //RCPlayer.player.prepareToPlay()
         RCPlayer.player.play()

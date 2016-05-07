@@ -10,9 +10,13 @@ import UIKit
 
 class RCHistory: NSObject {
     
+    
     static func getCallsHistoryWithSectors() -> ([String], [[RedConnectCallData]]) {
         
         let callsHistoryArray = self.getCallsHistoryArray()
+        
+        print("TEST: callsHistoryArray.count = \(callsHistoryArray.count)")
+        
         var daysArray = [String]()
         var daysSet: Set<String> = []
         var callsHistoryWithSectors = [[RedConnectCallData]]()
@@ -22,7 +26,9 @@ class RCHistory: NSObject {
         daysArray = daysSet.sort(>)
         
         for i in 0 ..< daysArray.count {
-            callsHistoryWithSectors.append([RedConnectCallData()])
+            var RCDataArray = [RedConnectCallData()]
+            RCDataArray.removeLast()
+            callsHistoryWithSectors.append(RCDataArray)
             for call in callsHistoryArray {
                 if call.date == daysArray[i] { callsHistoryWithSectors[i].append(call) }
             }
@@ -33,6 +39,8 @@ class RCHistory: NSObject {
         for day in daysArray {
             formattedDaysArray.append(RCDataFormat.dateFormat(day))
         }
+        
+
         
         return (formattedDaysArray, callsHistoryWithSectors)
         
@@ -48,7 +56,7 @@ class RCHistory: NSObject {
         let url = NSURL(string: urlString)
         let data = try? NSData(contentsOfURL: url!, options: [])
         let json = JSON(data: data!)
-        
+                
         for i in 0 ..< json.count {
             
             let call = RedConnectCallData()
@@ -59,7 +67,7 @@ class RCHistory: NSObject {
             if let widgetId =           callElement["widgetId"].int             { call.widgetId = widgetId }
             if let time =               callElement["time"].string              { call.time = time }
             if let requestTimestamp =   callElement["requestTimestamp"].string  { call.requestTimestamp = requestTimestamp }
-            if let scheduled =          callElement["scheduled"].bool            { call.scheduled = scheduled }
+            if let scheduled =          callElement["scheduled"].bool           { call.scheduled = scheduled }
             if let clientPhone =        callElement["clientPhone"].string       { call.clientPhone = clientPhone }
             if let visitorPhone =       callElement["visitorPhone"].string      { call.visitorPhone = visitorPhone }
             if let vid =                callElement["vid"].int                  { call.vid = vid }
