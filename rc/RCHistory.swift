@@ -15,7 +15,7 @@ class RCHistory: NSObject {
         
         let callsHistoryArray = self.getCallsHistoryArray()
         
-        print("TEST: callsHistoryArray.count = \(callsHistoryArray.count)")
+        print("TEST: callsHistoryArray.count = \(callsHistoryArray.count)")     //test
         
         var daysArray = [String]()
         var daysSet: Set<String> = []

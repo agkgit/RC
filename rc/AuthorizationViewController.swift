@@ -58,6 +58,7 @@ class AuthorizationViewController: UIViewController {
                 if let restkey = json["key"].string {
                     AppData.restKey = restkey
                     if AppData.restKey != "" {
+                        print(restkey)  //test
                         self.performSegueWithIdentifier("segueSignIn", sender: nil)
                     }
                 } else {
