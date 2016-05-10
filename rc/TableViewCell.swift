@@ -89,36 +89,37 @@ class TableViewCell: UITableViewCell {
         
         self.redConnectCallData = cellData
         
-        //
+        //fill timeLabel
         if let time = self.redConnectCallData.time {
             self.timeLabel?.text = RCDataFormat.timeFormat(time)
         } else {
             self.timeLabel?.text = "--:--"
         }
         
-        //
+        //fill visitorPhoneLabel
         if let visitorPhone = self.redConnectCallData.visitorPhone {
             self.visitorPhoneLabel.text = RCDataFormat.phoneNumberFormat(visitorPhone)
         } else {
             self.visitorPhoneLabel.text = "Номер неопределен"
         }
     
-        //
+        //fill cityLabel
         if let cityRu = self.redConnectCallData.cityRu {
+            
             if cityRu != "" { self.cityLabel?.text = cityRu }
-        } else {
-            self.cityLabel?.text = "Неизвестно"
-        }
         
-        //
+        } else { self.cityLabel?.text = "Неизвестно" }
+        
+        //fill flagImage
         if let imageNamed = self.redConnectCallData.country {
             let named = RCDataFormat.replaceChar(imageNamed, replace: " ", replaced: "-") + ".png"
             self.flagImage.image = UIImage(named: named)
         } else {
+            self.flagImage.alpha = 0.2
             self.flagImage.image = UIImage(named: "Unknown.png")
         }
         
-        //
+        //fill statusImage
         if let status = self.redConnectCallData.status {
             
             switch status {
@@ -138,22 +139,28 @@ class TableViewCell: UITableViewCell {
             //
             //            }
             
-        }
-        
-        //
+        } else {
+            self.statusImage.alpha = 0.2
+            self.statusImage.image = UIImage(named: "icon_call_nil") }
+    
+        //fill commentImage
         if let comment = self.redConnectCallData.feedbackComment {
             if comment != "" { self.commentImage.image = UIImage(named: "icon_comment") }
         } else {
+            self.commentImage.alpha = 0.2
             self.commentImage.image = UIImage(named: "icon_comment_default")
         }
         
-        //
+        //fill scheduledImage
         if let scheduled = self.redConnectCallData.scheduled {
             if scheduled {
                 self.scheduledImage.image = UIImage(named: "icon_timecall_true")
             } else {
                 self.scheduledImage.image = UIImage(named: "icon_timecall_false")
             }
+        } else {
+            self.scheduledImage.alpha = 0.2
+            self.scheduledImage.image = UIImage(named: "icon_timecall_false")
         }
     }
     

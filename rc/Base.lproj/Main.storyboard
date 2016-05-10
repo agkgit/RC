@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Uz-kr-Sd1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Uz-kr-Sd1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -62,9 +62,6 @@
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
-                                            <rect key="frame" x="177" y="31" width="12" height="12"/>
-                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_report_default" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-gk-9c5">
                                             <rect key="frame" x="197" y="31" width="12" height="12"/>
                                         </imageView>
@@ -73,6 +70,9 @@
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_comment_default" translatesAutoresizingMaskIntoConstraints="NO" id="eTt-Et-oYb">
                                             <rect key="frame" x="217" y="31" width="12" height="12"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_call_nil" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
+                                            <rect key="frame" x="177" y="32" width="12" height="12"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -112,7 +112,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="BeO-nf-SxO" kind="show" identifier="segueSignOut" id="wIp-qZ-bcQ"/>
+                        <segue destination="BeO-nf-SxO" kind="presentation" identifier="segueSignOut" modalTransitionStyle="flipHorizontal" id="wIp-qZ-bcQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ev-eP-6Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,8 +174,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="loginEditingChanged:" destination="BeO-nf-SxO" eventType="editingChanged" id="vD7-5j-QXK"/>
                                     <action selector="loginEditingDidBegin:" destination="BeO-nf-SxO" eventType="editingDidBegin" id="kdm-nt-UUF"/>
                                     <action selector="loginEditingDidEnd:" destination="BeO-nf-SxO" eventType="editingDidEnd" id="cgb-RD-yV3"/>
+                                    <action selector="loginValueChanged:" destination="BeO-nf-SxO" eventType="valueChanged" id="hHj-y2-480"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-fD-07o">
@@ -187,12 +189,6 @@
                                     <action selector="passEditingDidEnd:" destination="BeO-nf-SxO" eventType="editingDidEnd" id="FwA-nx-8W4"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt1-JL-Vte">
-                                <rect key="frame" x="82" y="205" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igu-nI-wQg">
                                 <rect key="frame" x="82" y="243" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -209,6 +205,12 @@
                                     <action selector="signAction:" destination="BeO-nf-SxO" eventType="touchUpInside" id="L2I-sb-A0h"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt1-JL-Vte">
+                                <rect key="frame" x="82" y="205" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -222,7 +224,7 @@
                         <outlet property="passLabel" destination="Igu-nI-wQg" id="h5x-MW-Gpn"/>
                         <outlet property="passTextField" destination="ceR-fD-07o" id="fvc-Tf-c5L"/>
                         <outlet property="warningLabel" destination="F3v-yQ-RaR" id="TDC-aY-czB"/>
-                        <segue destination="2Uz-kr-Sd1" kind="show" identifier="segueSignIn" id="lob-8m-maX"/>
+                        <segue destination="2Uz-kr-Sd1" kind="presentation" identifier="segueSignIn" modalTransitionStyle="flipHorizontal" id="lob-8m-maX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lag-up-Jjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,6 +235,7 @@
     <resources>
         <image name="RedConnect_logo_color" width="500" height="324"/>
         <image name="Unknown.png" width="48" height="48"/>
+        <image name="icon_call_nil" width="16" height="16"/>
         <image name="icon_comment_default" width="13" height="13"/>
         <image name="icon_payment_hover" width="24" height="24"/>
         <image name="icon_report_default" width="14" height="12"/>

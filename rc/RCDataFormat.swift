@@ -19,17 +19,28 @@ class RCDataFormat: NSObject {
         let bktClose: Character = ")"
         let dash: Character = "-"
         
-        for char in number.characters {
-            phone.append(char)
-            if (i == 3) { phone.append(bktClose) }
-            if (i == 0) || (i == 3) { phone.append(space) }
-            if (i == 0) { phone.append(bktOpen) }
-            if (i == 6) || (i == 8) { phone.append(dash)}
-            i += 1
+        if number.characters.count == 11 {
+            for char in number.characters {
+                phone.append(char)
+                if (i == 3) { phone.append(bktClose) }
+                if (i == 0) || (i == 3) { phone.append(space) }
+                if (i == 0) { phone.append(bktOpen) }
+                if (i == 6) || (i == 8) { phone.append(dash)}
+                i += 1
+            }
+        } else if number.characters.count == 12 {
+            for char in number.characters {
+                phone.append(char)
+                if (i == 4) { phone.append(bktClose) }
+                if (i == 1) || (i == 4) { phone.append(space) }
+                if (i == 1) { phone.append(bktOpen) }
+                if (i == 7) || (i == 9) { phone.append(dash)}
+                i += 1
+            }
         }
-        
         return phone
     }
+    
     
     static func dateFormat (dateWithTime: String) -> String {
         

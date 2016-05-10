@@ -19,7 +19,6 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loginTextField.text = ""
         passTextField.text = ""
 
@@ -86,4 +85,12 @@ class AuthorizationViewController: UIViewController {
     @IBAction func passEditingDidEnd(sender: AnyObject) {
         if passTextField.text == "" { passLabel.hidden = false }
     }
+    
+    
+    @IBAction func loginEditingChanged(sender: AnyObject) {
+    }
+
+    @IBAction func loginValueChanged(sender: AnyObject) {
+    }
+    
 }
