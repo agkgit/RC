@@ -14,34 +14,52 @@ class TableViewCell: UITableViewCell {
     
     var redConnectCallData: RedConnectCallData!
     
-    //Buttons
+    // MARK: - Properties -
+    
+    // MARK: Buttons
     @IBOutlet weak var playButton:      UIButton!
     
-    //Images
+    // MARK: Images
     @IBOutlet weak var flagImage:       UIImageView!
     @IBOutlet weak var statusImage:     UIImageView!
     @IBOutlet weak var likedImage:      UIImageView!
     @IBOutlet weak var commentImage:    UIImageView!
     @IBOutlet weak var scheduledImage:  UIImageView!
     
-    //Labels
+    // MARK: Labels
     @IBOutlet weak var visitorPhoneLabel:   UILabel!
     @IBOutlet weak var cityLabel:           UILabel!
     @IBOutlet weak var timeLabel:           UILabel!
-    
+        
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    override func setSelected(selected: Bool, animated: Bool) { super.setSelected(selected, animated: animated) }
     
     @IBAction func playButtonAction(sender: AnyObject) {
 
+        
+        
+        if let fileURL = self.redConnectCallData.filename {
+            let url = NSURL(string: fileURL)
+            let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
+            RCPlayer.player = AVPlayer(playerItem: playerItem)
+            let playerLayer=AVPlayerLayer(player: RCPlayer.player!)
+            playerLayer.frame=CGRectMake(0, 0, 300, 50)
+            self.layer.addSublayer(playerLayer)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if RCPlayer.player != nil { RCPlayer.player.stop() }
         
         let url: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
@@ -84,6 +102,8 @@ class TableViewCell: UITableViewCell {
 //            }
 //            
 //        }
+    
+    // MARK: fill cell action
     
     internal func fill(cellData: RedConnectCallData) {
         

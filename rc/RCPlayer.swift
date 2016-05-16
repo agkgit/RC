@@ -10,7 +10,5 @@ import UIKit
 import AVFoundation
 
 class RCPlayer: NSObject {
-    
-    static var player: AVAudioPlayer!
-    
+    static var player: AVPlayer!
 }
