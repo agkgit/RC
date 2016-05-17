@@ -84,8 +84,9 @@ class TableViewCell: UITableViewCell {
         if let imageNamed = self.redConnectCallData.country {
             let named = RCDataFormat.replaceChar(imageNamed, replace: " ", replaced: "-") + ".png"
             self.flagImage.image = UIImage(named: named)
+            self.flagImage.alpha = 1
         } else {
-            self.flagImage.alpha = 0.2
+            self.flagImage.alpha = 0.5
             self.flagImage.image = UIImage(named: "Unknown.png")
         }
         
@@ -98,38 +99,39 @@ class TableViewCell: UITableViewCell {
                 else { self.statusImage.image = UIImage(named: "icon_operator_done") }
                 
             case "operator_unavailable":
+                self.statusImage.alpha = 1
                 self.statusImage.image = UIImage(named: "icon_operator_false")
-                //case "operator_hangup":
-            //    cell.statusImage.image = UIImage(named: "icon_operator_done")
             default:
+                self.statusImage.alpha = 1
                 self.statusImage.image = UIImage(named: "icon_call_failed")
             }
             
-            //            if status == "normal" {
-            //
-            //            }
-            
         } else {
-            self.statusImage.alpha = 0.2
+            self.statusImage.alpha = 0.5
             self.statusImage.image = UIImage(named: "icon_call_nil") }
     
         //fill commentImage
         if let comment = self.redConnectCallData.feedbackComment {
-            if comment != "" { self.commentImage.image = UIImage(named: "icon_comment") }
+            if comment != "" {
+                self.commentImage.alpha = 1
+                self.commentImage.image = UIImage(named: "icon_comment")
+            }
         } else {
-            self.commentImage.alpha = 0.2
+            self.commentImage.alpha = 0.5
             self.commentImage.image = UIImage(named: "icon_comment_default")
         }
         
         //fill scheduledImage
         if let scheduled = self.redConnectCallData.scheduled {
             if scheduled {
+                self.scheduledImage.alpha = 1
                 self.scheduledImage.image = UIImage(named: "icon_timecall_true")
             } else {
+                self.scheduledImage.alpha = 1
                 self.scheduledImage.image = UIImage(named: "icon_timecall_false")
             }
         } else {
-            self.scheduledImage.alpha = 0.2
+            self.scheduledImage.alpha = 0.5
             self.scheduledImage.image = UIImage(named: "icon_timecall_false")
         }
     }

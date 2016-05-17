@@ -49,6 +49,7 @@ class RCDataFormat: NSObject {
         var month = ""
         
         switch dayOfMonthArray[1] {
+        
         case "01": month = "января"
         case "02": month = "февраля"
         case "03": month = "марта"
@@ -61,11 +62,48 @@ class RCDataFormat: NSObject {
         case "10": month = "октября"
         case "11": month = "ноября"
         case "12": month = "декабря"
-        default:
-            print("error")
+            
+        default: break
+            
         }
         
-        let dayOfMonthString = dayOfMonthArray[2] + " " + month + " " + dayOfMonthArray[0]
+        var d = 0
+        if let day = Int(dayOfMonthArray[2]) { d = day }
+        
+        var m = 0
+        if let day = Int(dayOfMonthArray[1]) {
+            
+            switch day {
+            case 1      : m = 11
+            case 2      : m = 12
+            case 3...12 : m = Int(day) - 2
+            default: break
+            }
+        }
+        
+        var c = 0, y = 0
+        if let year = Int(dayOfMonthArray[0]) {
+            c = year / 100
+            y = year % 100
+        }
+        
+        let weekdayNum = (d + ( ((13 * m) - 1) / 5 ) + y + ( y / 4 ) + ( c / 4 ) - (2 * c)) % 7
+        var weekday = ""
+        
+        switch weekdayNum {
+        case 0: weekday = "Воскресенье"
+        case 1: weekday = "Понедельник"
+        case 2: weekday = "Вторник"
+        case 3: weekday = "Среда"
+        case 4: weekday = "Четверг"
+        case 5: weekday = "Пятница"
+        case 6: weekday = "Суббота"
+        default:
+            break
+        }
+        
+        
+        let dayOfMonthString = weekday + ", " + dayOfMonthArray[2] + " " + month + " " + dayOfMonthArray[0]
         
         return dayOfMonthString
     }
@@ -91,28 +129,45 @@ class RCDataFormat: NSObject {
     }
 
     
-    // Функция замены символов в строке
+    func dayOfWeek(date: String) -> String {
+        let dateWithTimeArray = date.componentsSeparatedByString(" ")
+        let dayOfMonthArray = dateWithTimeArray[0].componentsSeparatedByString("-")
+        
+        var d = 0
+        if let day = Int(dayOfMonthArray[2]) { d = day }
+        
+        var m = 0
+        if let day = Int(dayOfMonthArray[1]) {
+            
+            switch day {
+            case 1      : m = 11
+            case 2      : m = 12
+            case 3...12 : m = Int(day) - 2
+            default: break
+            }
+        }
     
-//    Для нашего современного календаря:
-//    
-//    W = d + [ (13m - 1) / 5 ] + y + [ y / 4 ] + [ c / 4 ] - 2c
-//    
-//    где d - число месяца;
-//    m - номер месяца, начиная с марта (март=1, апрель=2, ..февраль=12);
-//    y - номер года в столетии (например, для 1965 года y=65. Для января и февраля 1965 года, т. е. для m=11 или m=12 номер года надо брать предыдущий, т. е. y=64);
-//    c - количество столетий (например, для 2000 года c=20. И здесь для января и февраля 2000 года надо брать предыдущее столетие с=19);
-//    квадратные скобки означают целую часть полученного числа (отбрасываем дробную) .
-//    
-//    Результат W делите на 7 и модуль остатка от деления даст день недели (воскресенье=0, понедельник=1, ..суббота=6)
-//    
-//    Пример: для 31 декабря 2008 года определяем:
-//    d=31, m=10, y=8, c=20
-//    
-//    По формуле находим:
-//    W = 31 + [ ( 13 * 10 - 1 ) / 5 ] + 8 + [ 8 / 4 ] + [ 20 / 4 ] - 2 * 20 =
-//    = 31 + 25 + 8 + 2 + 5 - 40 = 31
-//    
-//    Теперь делим W на 7 и находим остаток от деления: 31 / 7 = 4 и 3 в остатке.
-//    Тройка соответствует дню недели СРЕДА.
-    
+        var c = 0, y = 0
+        if let year = Int(dayOfMonthArray[0]) {
+            c = year / 100
+            y = year % 100
+        }
+        
+        let weekdayNum = (d + ( ((13 * m) - 1) / 5 ) + y + ( y / 4 ) + ( c / 4 ) - (2 * c)) % 7
+        var weekday = ""
+        
+        switch weekdayNum {
+        case 0: weekday = "Воскресенье"
+        case 1: weekday = "Понедельник"
+        case 2: weekday = "Вторник"
+        case 3: weekday = "Среда"
+        case 4: weekday = "Четверг"
+        case 5: weekday = "Пятница"
+        case 6: weekday = "Суббота"
+        default:
+            break
+        }
+        
+        return weekday
+    }    
 }
