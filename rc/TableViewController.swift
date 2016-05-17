@@ -62,12 +62,14 @@ class TableViewController: UITableViewController {
         let label = UILabel()
         
         label.frame = CGRect(x: 8, y: 0, width: 320, height: 40)
-        label.font = UIFont.boldSystemFontOfSize(12)
+        label.font = UIFont.boldSystemFontOfSize(14)
         
         label.text = sectors[section]
+        
         let headView = UIView()
         headView.addSubview(label)
-        
+        headView.alpha = 0.8
+        headView.backgroundColor = UIColor.whiteColor()
         return headView
     }
     

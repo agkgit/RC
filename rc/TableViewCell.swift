@@ -39,69 +39,19 @@ class TableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) { super.setSelected(selected, animated: animated) }
     
     @IBAction func playButtonAction(sender: AnyObject) {
-
-        
         
         if let fileURL = self.redConnectCallData.filename {
             let url = NSURL(string: fileURL)
             let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
             RCPlayer.player = AVPlayer(playerItem: playerItem)
-            let playerLayer=AVPlayerLayer(player: RCPlayer.player!)
-            playerLayer.frame=CGRectMake(0, 0, 300, 50)
-            self.layer.addSublayer(playerLayer)
+            
+            if RCPlayer.player.rate == 0 {
+            }
+            
+            playButton.setImage(UIImage(named: "Pause60"), forState: UIControlState.Normal)
+            RCPlayer.player.play()
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        if RCPlayer.player != nil { RCPlayer.player.stop() }
-        
-        let url: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
-        do { RCPlayer.player = try AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil) }
-        catch let error as NSError { print(error.description) }
-        
-        
-        //RCPlayer.player.numberOfLoops = 0
-        //RCPlayer.player.prepareToPlay()
-        RCPlayer.player.play()
-    
-//                let url = NSURL(string: "https://redhelper.ru/my/rc/calls/mp3/\(callID).mp3")
-//                downloadFileFromURL(url)
     }
-    
-//        func downloadFileFromURL(url: NSURL){
-//            var downloadTask:NSURLSessionDownloadTask
-//            downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(url, completionHandler: { (URL, response, error) -> Void in
-//    
-//                self.play(URL!)
-//    
-//            })
-//    
-//            downloadTask.resume()
-//        }
-    
-//        func play(url:NSURL) {
-//            print("playing \(url)")
-//    
-//            do {
-//                RCPlayer.player = try AVAudioPlayer(contentsOfURL: url)
-//                RCPlayer.player.prepareToPlay()
-//                //player.volume = 1.0
-//                RCPlayer.player.play()
-//            } catch let error as NSError {
-//                //self.player = nil
-//                print(error.localizedDescription)
-//            } catch {
-//                print("AVAudioPlayer init failed")
-//            }
-//            
-//        }
     
     // MARK: fill cell action
     

@@ -9,7 +9,7 @@
         <scene sceneID="W1y-4S-xer">
             <objects>
                 <tableViewController id="wqk-LR-ZZz" userLabel="History" customClass="TableViewController" customModule="rc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="B21-9h-ZSp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="B21-9h-ZSp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -18,13 +18,13 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CGV-zI-Q1C" id="4RM-lf-c85">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
-                                            <rect key="frame" x="8" y="1" width="30" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="▷">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
+                                            <rect key="frame" x="14" y="5" width="20" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <state key="normal" image="Play60">
                                                 <color key="titleColor" red="0.58823529411764708" green="0.086274509803921567" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -41,9 +41,6 @@
                                             <rect key="frame" x="46" y="29" width="15" height="15"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax8-me-EI6">
-                                            <rect key="frame" x="234" y="4" width="22" height="22"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdh-dr-cmM">
                                             <rect key="frame" x="292" y="1" width="20" height="20"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
@@ -134,6 +131,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yuF-qu-uTE">
@@ -233,6 +233,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Play60" width="60" height="60"/>
         <image name="RedConnect_logo_color" width="500" height="324"/>
         <image name="Unknown.png" width="48" height="48"/>
         <image name="icon_call_nil" width="16" height="16"/>
