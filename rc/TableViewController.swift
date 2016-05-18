@@ -61,7 +61,7 @@ class TableViewController: UITableViewController {
         
         let label = UILabel()
         
-        label.frame = CGRect(x: 15, y: -5, width: 320, height: 40)
+        label.frame = CGRect(x: 17, y: -5, width: 320, height: 40)
         label.font = UIFont.systemFontOfSize(14)
         
         label.text = sectors[section]

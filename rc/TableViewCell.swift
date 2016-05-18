@@ -30,7 +30,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var visitorPhoneLabel:   UILabel!
     @IBOutlet weak var cityLabel:           UILabel!
     @IBOutlet weak var timeLabel:           UILabel!
-        
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,23 +41,34 @@ class TableViewCell: UITableViewCell {
 
         if let fileURL = self.redConnectCallData.filename {
             
+            let url = NSURL(string: fileURL)
+            let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
+            
             if RCPlayer.playButton != self.playButton {
+                
                 RCPlayer.playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
                 RCPlayer.playButton = self.playButton
                 
-                let url = NSURL(string: fileURL)
-                let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
                 RCPlayer.player = AVPlayer(playerItem: playerItem)
             }
             
             if RCPlayer.player.rate == 0 {
                 playButton.setImage(UIImage(named: "Pause60"), forState: UIControlState.Normal)
                 RCPlayer.player.play()
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(finishedPlaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
             } else {
                 playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
                 RCPlayer.player.pause()
             }
         }
+    }
+    
+    func finishedPlaying() {
+        playButton.setImage(UIImage(named: "Play60.png"), forState: UIControlState.Normal)
+        
+        let stopedPlayerItem: AVPlayerItem = AVPlayerItem(URL: NSURL(fileURLWithPath: "")) //myNotification.object as! AVPlayerItem
+        stopedPlayerItem.seekToTime(kCMTimeZero)
+
     }
     
     // MARK: fill cell action
