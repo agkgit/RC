@@ -39,17 +39,25 @@ class TableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) { super.setSelected(selected, animated: animated) }
     
     @IBAction func playButtonAction(sender: AnyObject) {
-        
+
         if let fileURL = self.redConnectCallData.filename {
-            let url = NSURL(string: fileURL)
-            let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
-            RCPlayer.player = AVPlayer(playerItem: playerItem)
             
-            if RCPlayer.player.rate == 0 {
+            if RCPlayer.playButton != self.playButton {
+                RCPlayer.playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
+                RCPlayer.playButton = self.playButton
+                
+                let url = NSURL(string: fileURL)
+                let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
+                RCPlayer.player = AVPlayer(playerItem: playerItem)
             }
             
-            playButton.setImage(UIImage(named: "Pause60"), forState: UIControlState.Normal)
-            RCPlayer.player.play()
+            if RCPlayer.player.rate == 0 {
+                playButton.setImage(UIImage(named: "Pause60"), forState: UIControlState.Normal)
+                RCPlayer.player.play()
+            } else {
+                playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
+                RCPlayer.player.pause()
+            }
         }
     }
     
@@ -75,9 +83,7 @@ class TableViewCell: UITableViewCell {
     
         //fill cityLabel
         if let cityRu = self.redConnectCallData.cityRu {
-            
-            if cityRu != "" { self.cityLabel?.text = cityRu }
-        
+            if cityRu != "" { self.cityLabel?.text = cityRu } else { self.cityLabel?.text = "Неизвестно" }
         } else { self.cityLabel?.text = "Неизвестно" }
         
         //fill flagImage
