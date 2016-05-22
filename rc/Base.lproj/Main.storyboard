@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Uz-kr-Sd1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Uz-kr-Sd1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,7 @@
         <scene sceneID="W1y-4S-xer">
             <objects>
                 <tableViewController id="wqk-LR-ZZz" userLabel="History" customClass="TableViewController" customModule="rc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="B21-9h-ZSp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="B21-9h-ZSp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,16 +21,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
-                                            <rect key="frame" x="14" y="5" width="20" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <state key="normal" image="Play60">
-                                                <color key="titleColor" red="0.58823529411764708" green="0.086274509803921567" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="playButtonAction:" destination="CGV-zI-Q1C" eventType="touchUpInside" id="WQq-GQ-akO"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+0 (000) 000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzl-sJ-Ist">
                                             <rect key="frame" x="42" y="5" width="180" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -71,6 +61,16 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_call_nil" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
                                             <rect key="frame" x="177" y="32" width="12" height="12"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
+                                            <rect key="frame" x="13" y="6" width="21" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <state key="normal" image="Play60">
+                                                <color key="titleColor" red="0.58823529411764708" green="0.086274509803921567" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="playButtonAction:" destination="CGV-zI-Q1C" eventType="touchUpInside" id="WQq-GQ-akO"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,11 +94,24 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="История" id="Mul-Gt-WqZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="0Ek-Py-IjO">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="szy-pa-HNL">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="yf0-aj-j0S">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r4c-dx-xJL">
+                                <rect key="frame" x="16" y="12" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Выйти">
+                                <state key="normal" image="callback_white100"/>
+                                <connections>
+                                    <action selector="openWebChat:" destination="wqk-LR-ZZz" eventType="touchUpInside" id="eWH-Ev-eq8"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="openWebChat:" destination="wqk-LR-ZZz" id="X8T-t2-7Pc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0Ek-Py-IjO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="szy-pa-HNL">
+                                <rect key="frame" x="284" y="12" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quit_white100">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -108,6 +121,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="aPT-5D-3q9">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Обновление...">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                     <connections>
                         <segue destination="BeO-nf-SxO" kind="presentation" identifier="segueSignOut" modalTransitionStyle="flipHorizontal" id="wIp-qZ-bcQ"/>
                     </connections>
@@ -130,7 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.61568627450980395" green="0.098039215686274508" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
@@ -236,10 +260,12 @@
         <image name="Play60" width="60" height="60"/>
         <image name="RedConnect_logo_color" width="500" height="324"/>
         <image name="Unknown.png" width="48" height="48"/>
+        <image name="callback_white100" width="100" height="100"/>
         <image name="icon_call_nil" width="16" height="16"/>
         <image name="icon_comment_default" width="13" height="13"/>
         <image name="icon_payment_hover" width="24" height="24"/>
         <image name="icon_report_default" width="14" height="12"/>
         <image name="icon_timecall_false" width="12" height="12"/>
+        <image name="quit_white100" width="100" height="100"/>
     </resources>
 </document>

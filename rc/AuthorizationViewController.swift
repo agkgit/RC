@@ -68,7 +68,7 @@ class AuthorizationViewController: UIViewController {
         }
         
     }
-
+    
 
     @IBAction func loginEditingDidBegin(sender: AnyObject) {
         if loginLabel.hidden == false { loginLabel.hidden = true }
