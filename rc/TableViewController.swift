@@ -22,7 +22,7 @@ class TableViewController: UITableViewController {
         let navigationBar = self.navigationController?.navigationBar
         navigationBar?.tintColor = UIColor.whiteColor()
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationBar?.titleTextAttributes = titleDict as! [String : AnyObject]
+        navigationBar?.titleTextAttributes = titleDict as? [String : AnyObject]
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -73,6 +73,7 @@ class TableViewController: UITableViewController {
         if let url = NSURL(string: "tel://+\(phoneNumber)") {
             print(url.absoluteString)
             UIApplication.sharedApplication().openURL(url)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
     
