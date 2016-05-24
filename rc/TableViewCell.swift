@@ -41,30 +41,33 @@ class TableViewCell: UITableViewCell {
 
         if let fileURL = self.redConnectCallData.filename {
             
-            let url = NSURL(string: fileURL)
-            let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
+            if fileURL != "" {
             
-            if RCPlayer.playButton != self.playButton {
+                let url = NSURL(string: fileURL)
+                let playerItem: AVPlayerItem! = AVPlayerItem(URL: url!)
+            
+                if RCPlayer.playButton != self.playButton {
                 
-                RCPlayer.playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
-                RCPlayer.playButton = self.playButton
+                    RCPlayer.playButton.setImage(UIImage(named: "Play60"), forState: .Normal)
+                    RCPlayer.playButton = self.playButton
                 
-                RCPlayer.player = AVPlayer(playerItem: playerItem)
+                    RCPlayer.player = AVPlayer(playerItem: playerItem)
             }
             
-            if RCPlayer.player.rate == 0 {
-                playButton.setImage(UIImage(named: "Pause60"), forState: UIControlState.Normal)
-                RCPlayer.player.play()
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(finishedPlaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
-            } else {
-                playButton.setImage(UIImage(named: "Play60"), forState: UIControlState.Normal)
-                RCPlayer.player.pause()
+                if RCPlayer.player.rate == 0 {
+                    playButton.setImage(UIImage(named: "Pause60"), forState: .Normal)
+                    RCPlayer.player.play()
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(finishedPlaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
+                } else {
+                    playButton.setImage(UIImage(named: "Play60"), forState: .Normal)
+                    RCPlayer.player.pause()
+                }
             }
         }
     }
     
     func finishedPlaying() {
-        playButton.setImage(UIImage(named: "Play60.png"), forState: UIControlState.Normal)
+        playButton.setImage(UIImage(named: "Play60.png"), forState: .Normal)
         
         let stopedPlayerItem: AVPlayerItem = AVPlayerItem(URL: NSURL(fileURLWithPath: "")) //myNotification.object as! AVPlayerItem
         stopedPlayerItem.seekToTime(kCMTimeZero)
@@ -76,6 +79,12 @@ class TableViewCell: UITableViewCell {
     internal func fill(cellData: RedConnectCallData) {
         
         self.redConnectCallData = cellData
+        
+        if let fileURL = self.redConnectCallData.filename {
+            if fileURL == ""{
+                self.playButton.setImage(UIImage(named: "NoPlay60"), forState: .Normal)
+            }
+        }
         
         //fill timeLabel
         if let time = self.redConnectCallData.time {

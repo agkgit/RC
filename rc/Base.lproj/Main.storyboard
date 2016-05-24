@@ -31,14 +31,8 @@
                                             <rect key="frame" x="46" y="29" width="15" height="15"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdh-dr-cmM">
-                                            <rect key="frame" x="292" y="1" width="20" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI0-IO-BJ2">
-                                            <rect key="frame" x="250" y="3" width="42" height="21"/>
+                                            <rect key="frame" x="241" y="5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -61,8 +55,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_call_nil" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-ji-zmr">
                                             <rect key="frame" x="177" y="32" width="12" height="12"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
-                                            <rect key="frame" x="13" y="6" width="21" height="21"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-WU-T2W">
+                                            <rect key="frame" x="8" y="3" width="25" height="25"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <state key="normal" image="Play60">
                                                 <color key="titleColor" red="0.58823529411764708" green="0.086274509803921567" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,6 +64,10 @@
                                             <connections>
                                                 <action selector="playButtonAction:" destination="CGV-zI-Q1C" eventType="touchUpInside" id="WQq-GQ-akO"/>
                                             </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnD-42-xp3">
+                                            <rect key="frame" x="283" y="4" width="23" height="23"/>
+                                            <state key="normal" title="Button" image="icon_about"/>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -261,6 +259,7 @@
         <image name="RedConnect_logo_color" width="500" height="324"/>
         <image name="Unknown.png" width="48" height="48"/>
         <image name="callback_white100" width="100" height="100"/>
+        <image name="icon_about" width="50" height="50"/>
         <image name="icon_call_nil" width="16" height="16"/>
         <image name="icon_comment_default" width="13" height="13"/>
         <image name="icon_payment_hover" width="24" height="24"/>
