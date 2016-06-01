@@ -46,6 +46,12 @@ class TableViewController: UITableViewController {
         
         label.frame = CGRect(x: 17, y: -5, width: 320, height: 40)
         label.font = UIFont.systemFontOfSize(14)
+        let labelBalance = UILabel()
+        labelBalance.frame = CGRect(x: 160, y: 0, width: 150, height: 40)
+        labelBalance.textColor = UIColor.darkGrayColor()
+        labelBalance.font = UIFont.systemFontOfSize(12)
+        labelBalance.text = "остаток: 30 звонков"
+        label.addSubview(labelBalance)
         
         label.text = sectors[section]
         
