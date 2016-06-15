@@ -39,6 +39,15 @@ class RCDataFormat: NSObject {
             }
         }
         return phone
+        
+//        let s = "05554446677"
+//        let s2 = String(format: "%@ (%@) %@ %@ %@", s.substringToIndex(advance(s.startIndex, 1)),
+//                        s.substringWithRange(advance(s.startIndex, 1) ... advance(s.startIndex, 3)),
+//                        s.substringWithRange(advance(s.startIndex, 4) ... advance(s.startIndex, 6)),
+//                        s.substringWithRange(advance(s.startIndex, 7) ... advance(s.startIndex, 8)),
+//                        s.substringWithRange(advance(s.startIndex, 9) ... advance(s.startIndex, 10))
+//        )
+        
     }
     
     
