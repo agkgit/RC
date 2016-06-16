@@ -1,53 +1,18 @@
-//
-//  RCDataFormat.swift
-//  rc
-//
-//  Created by Admin on 12.04.16.
-//  Copyright © 2016 RH. All rights reserved.
-//
 
 import UIKit
 
 class RCDataFormat: NSObject {
     
-    static func phoneNumberFormat (number: String) -> String {
-        
-        var phone: String = "+"
-        var i = 0
-        let space: Character = " "
-        let bktOpen: Character = "("
-        let bktClose: Character = ")"
-        let dash: Character = "-"
-        
-        if number.characters.count == 11 {
-            for char in number.characters {
-                phone.append(char)
-                if (i == 3) { phone.append(bktClose) }
-                if (i == 0) || (i == 3) { phone.append(space) }
-                if (i == 0) { phone.append(bktOpen) }
-                if (i == 6) || (i == 8) { phone.append(dash)}
-                i += 1
-            }
-        } else if number.characters.count == 12 {
-            for char in number.characters {
-                phone.append(char)
-                if (i == 4) { phone.append(bktClose) }
-                if (i == 1) || (i == 4) { phone.append(space) }
-                if (i == 1) { phone.append(bktOpen) }
-                if (i == 7) || (i == 9) { phone.append(dash)}
-                i += 1
-            }
-        }
-        return phone
-        
-//        let s = "05554446677"
-//        let s2 = String(format: "%@ (%@) %@ %@ %@", s.substringToIndex(advance(s.startIndex, 1)),
-//                        s.substringWithRange(advance(s.startIndex, 1) ... advance(s.startIndex, 3)),
-//                        s.substringWithRange(advance(s.startIndex, 4) ... advance(s.startIndex, 6)),
-//                        s.substringWithRange(advance(s.startIndex, 7) ... advance(s.startIndex, 8)),
-//                        s.substringWithRange(advance(s.startIndex, 9) ... advance(s.startIndex, 10))
-//        )
-        
+    static func phoneNumberFormat (phone: String) -> String {
+
+            let formatPhoneNumber = String(format: "+%@ (%@) %@ %@ %@",
+                    phone.substringToIndex(phone.startIndex.advancedBy(1)),
+                    phone.substringWithRange(phone.startIndex.advancedBy(1) ... phone.startIndex.advancedBy(3)),
+                    phone.substringWithRange(phone.startIndex.advancedBy(4) ... phone.startIndex.advancedBy(6)),
+                    phone.substringWithRange(phone.startIndex.advancedBy(7) ... phone.startIndex.advancedBy(8)),
+                    phone.substringWithRange(phone.startIndex.advancedBy(9) ... phone.startIndex.advancedBy(10))
+            )
+        return formatPhoneNumber
     }
     
     
