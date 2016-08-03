@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3781A5B242919F50AC640583 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781A3F44AA7B4AA5E3DB55D /* TableViewController.swift */; };
+		3781AB3BE76CCA746A0A56D8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781AED86A095AD0D1921906 /* TableViewCell.swift */; };
+		3781AF1646E057A836927309 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781AD0F3838AC85C08449F4 /* AuthorizationViewController.swift */; };
 		8464FD161CBD59BF00E2352A /* RCDataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464FD151CBD59BF00E2352A /* RCDataFormat.swift */; };
 		848A844E1CCE304500CC5978 /* Abkhazia.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A834A1CCE304400CC5978 /* Abkhazia.png */; };
 		848A844F1CCE304500CC5978 /* Afghanistan.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A834B1CCE304400CC5978 /* Afghanistan.png */; };
@@ -271,18 +274,18 @@
 		84FD3BC01CB7BCAC00872A19 /* RCPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD3BBF1CB7BCAC00872A19 /* RCPlayer.swift */; };
 		84FD3BC21CB7F08900872A19 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD3BC11CB7F08900872A19 /* AppData.swift */; };
 		AE0B53881CA0A73F00CA80C4 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE0B53871CA0A73E00CA80C4 /* sound.mp3 */; };
-		AE46B4861CB7078300E8C751 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */; };
-		AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F0BD21C92229400961296 /* TableViewController.swift */; };
 		AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE82AC871C944608006D1D7B /* RCHistory.swift */; };
 		AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A381C92142700E3D08B /* AppDelegate.swift */; };
 		AE832A3E1C92142700E3D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3C1C92142700E3D08B /* Main.storyboard */; };
 		AE832A401C92142700E3D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE832A3F1C92142700E3D08B /* Assets.xcassets */; };
 		AE832A431C92142700E3D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE832A411C92142700E3D08B /* LaunchScreen.storyboard */; };
 		AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */; };
-		AEA5B57D1C94DBE8009306AC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3781A3F44AA7B4AA5E3DB55D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3781AD0F3838AC85C08449F4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		3781AED86A095AD0D1921906 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8464FD151CBD59BF00E2352A /* RCDataFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCDataFormat.swift; sourceTree = "<group>"; };
 		848A834A1CCE304400CC5978 /* Abkhazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Abkhazia.png; path = flags/Abkhazia.png; sourceTree = "<group>"; };
 		848A834B1CCE304400CC5978 /* Afghanistan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Afghanistan.png; path = flags/Afghanistan.png; sourceTree = "<group>"; };
@@ -547,8 +550,6 @@
 		84FD3BBF1CB7BCAC00872A19 /* RCPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCPlayer.swift; sourceTree = "<group>"; };
 		84FD3BC11CB7F08900872A19 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		AE0B53871CA0A73E00CA80C4 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
-		AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
-		AE5F0BD21C92229400961296 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AE82AC871C944608006D1D7B /* RCHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCHistory.swift; sourceTree = "<group>"; };
 		AE832A351C92142700E3D08B /* rc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE832A381C92142700E3D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -557,7 +558,6 @@
 		AE832A421C92142700E3D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE832A441C92142700E3D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +571,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3781AED9CA063C47A061BA1D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3781AD0F3838AC85C08449F4 /* AuthorizationViewController.swift */,
+				3781A3F44AA7B4AA5E3DB55D /* TableViewController.swift */,
+				3781AED86A095AD0D1921906 /* TableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		848A83491CCE2FF200CC5978 /* flags */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,11 +878,9 @@
 		AE832A371C92142700E3D08B /* rc */ = {
 			isa = PBXGroup;
 			children = (
-				AEA5B57C1C94DBE8009306AC /* TableViewCell.swift */,
-				AE5F0BD21C92229400961296 /* TableViewController.swift */,
-				AE46B4851CB7078300E8C751 /* AuthorizationViewController.swift */,
 				AE832A381C92142700E3D08B /* AppDelegate.swift */,
 				AE832A4C1C92184C00E3D08B /* SwiftyJSON.swift */,
+				3781AED9CA063C47A061BA1D /* Controllers */,
 				AEC568AE1C961791000FE247 /* images */,
 				AE79298F1CC98099003C3B1E /* RC */,
 				AE832A3C1C92142700E3D08B /* Main.storyboard */,
@@ -886,8 +894,8 @@
 		AEC568AE1C961791000FE247 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				848A83491CCE2FF200CC5978 /* flags */,
 				AE0B53871CA0A73E00CA80C4 /* sound.mp3 */,
+				848A83491CCE2FF200CC5978 /* flags */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1225,15 +1233,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE46B4861CB7078300E8C751 /* AuthorizationViewController.swift in Sources */,
 				AE832A391C92142700E3D08B /* AppDelegate.swift in Sources */,
 				84FD3BC01CB7BCAC00872A19 /* RCPlayer.swift in Sources */,
 				84FD3BC21CB7F08900872A19 /* AppData.swift in Sources */,
 				AE82AC881C944608006D1D7B /* RCHistory.swift in Sources */,
-				AEA5B57D1C94DBE8009306AC /* TableViewCell.swift in Sources */,
 				AE832A4D1C92184C00E3D08B /* SwiftyJSON.swift in Sources */,
 				8464FD161CBD59BF00E2352A /* RCDataFormat.swift in Sources */,
-				AE5F0BD31C92229400961296 /* TableViewController.swift in Sources */,
+				3781AF1646E057A836927309 /* AuthorizationViewController.swift in Sources */,
+				3781A5B242919F50AC640583 /* TableViewController.swift in Sources */,
+				3781AB3BE76CCA746A0A56D8 /* TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
